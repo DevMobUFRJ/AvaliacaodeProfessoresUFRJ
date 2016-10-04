@@ -11,6 +11,7 @@ import android.widget.Button;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button zimbraoButton;
+    Button marcosButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home);
         zimbraoButton = (Button)findViewById(R.id.button);
         zimbraoButton.setOnClickListener(this);
+        marcosButton = (Button)findViewById(R.id.button2);
+        marcosButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, Form1.class);
+                i.putExtra("NOME", marcosButton.getText().toString());
+                startActivity(i);
+
+            }
+        });
     }
 
     @Override
