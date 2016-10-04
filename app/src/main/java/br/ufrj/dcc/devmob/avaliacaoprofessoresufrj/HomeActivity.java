@@ -46,9 +46,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.button:
-                // Exemplo:
-                //Intent i = Intent(this, FormActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(this, Form1.class);
+                i.putExtra("NOME", zimbraoButton.getText().toString());
+                startActivity(i);
                 break;
 
         }
