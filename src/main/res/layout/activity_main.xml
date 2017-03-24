@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="589dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/CorFundo">
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Autorizar com SIGA"
+            android:id="@+id/autorizarSiga"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffffff"/>
+
+        <ImageView
+            android:layout_marginBottom="47dp"
+            android:id="@+id/imageView"
+            android:background="@drawable/oii"
+            android:layout_above="@+id/autorizarSiga"
+            android:layout_centerHorizontal="true"
+            android:layout_width="100dp"
+            android:layout_height="140dp" />
+    </RelativeLayout>
+</LinearLayout>
