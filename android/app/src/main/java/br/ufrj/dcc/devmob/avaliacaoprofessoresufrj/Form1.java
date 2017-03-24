@@ -16,12 +16,10 @@ public class Form1 extends Activity {
 
     TextView txt_mat;
     Button btn_prox;
+    Button btn1;
     RatingBar rtg_1;
-    RatingBar rtg_2;
-    RatingBar rtg_3;
     TextView result_1;
-    TextView result_2;
-    TextView result_3;
+    int btn_aux = 0;
 
 
     @Override
@@ -31,6 +29,7 @@ public class Form1 extends Activity {
 
         mostraValor();
 
+        btn1 = (Button) findViewById(R.id.Btn1);
         txt_mat = (TextView)findViewById(R.id.txt_mat);
         btn_prox = (Button)findViewById(R.id.btn_prox);
 
@@ -39,6 +38,25 @@ public class Form1 extends Activity {
             String n = b.getString("NOME");
             txt_mat.setText(n);
         }
+
+                btn1.setBackgroundColor(android.graphics.Color.parseColor("#b2a7a7"));
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view){
+                        if (btn_aux == 0) {
+                            btn_aux = 1;
+                            btn1.setBackgroundColor(android.graphics.Color.parseColor("#169216"));
+                            Toast.makeText(getApplicationContext(), "Didática avaliada como positiva!", Toast.LENGTH_SHORT).show();
+                        } else if (btn_aux == 1){
+                            btn_aux = 2;
+                            btn1.setBackgroundColor(android.graphics.Color.parseColor("#a90606"));
+                            Toast.makeText(getApplicationContext(), "Didática avaliada como negativa!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            btn_aux = 0;
+                            btn1.setBackgroundColor(android.graphics.Color.parseColor("#b2a7a7"));
+                            Toast.makeText(getApplicationContext(), "Didática avaliada como neutra", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
                 btn_prox.setOnClickListener(new View.OnClickListener() {
                     @Override
