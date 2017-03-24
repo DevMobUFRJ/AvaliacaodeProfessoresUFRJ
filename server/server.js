@@ -8,7 +8,7 @@ var app        = express();
 var morgan     = require('morgan');
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-var mongouurl = process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://node:node@localhost:27017/avaliacao';
+var mongourl = process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://node:node@localhost:27017/avprof';
 
 var mongoose   = require('mongoose');
 mongoose.connect(mongourl); // connect to our database
@@ -119,5 +119,7 @@ app.use('/api', router);
 
 // START THE SERVER
 // =============================================================================
-app.listen(port);
+app.listen(port, server_ip_address, function(){
+  console.log("Listening on " + server_ip_address + ", server_port " + port)
+});
 console.log('Magic happens on port ' + port);
