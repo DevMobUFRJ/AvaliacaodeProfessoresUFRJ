@@ -89,4 +89,13 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Btn1"
+        android:layout_alignEnd="@+id/edt_com"
+        android:layout_alignRight="@+id/edt_com"
+        android:text="teste" />
+
 </RelativeLayout>

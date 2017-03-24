@@ -20,7 +20,7 @@ public class Form1 extends Activity {
     RatingBar rtg_1;
     TextView result_1;
     int btn_aux = 0;
-
+// porra louca do teste
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
