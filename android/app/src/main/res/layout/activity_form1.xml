@@ -13,7 +13,7 @@
 
     <Button
         android:id="@+id/btn_didatica"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ratingBar"
@@ -63,17 +63,12 @@
 
     <RatingBar
         android:id="@+id/ratingBar"
+        style="@style/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_mat"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
-        android:foregroundTint="@color/yellow"
-        android:isIndicator="false"
-        android:progress="@color/black"
-        android:progressBackgroundTint="@color/black"
-        android:progressTint="@color/yellow"
-        android:secondaryProgressTint="@color/black"
         android:stepSize="0.5" />
 
     <Button
