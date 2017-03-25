@@ -12,7 +12,7 @@ public class Avaliacao{
     private String comentario;
     private float nota;
     private String data;
-    private boolean status;
+    private boolean visivel;
     private int[] avaliacao;
 
 
@@ -60,11 +60,11 @@ public class Avaliacao{
     }
 
     public boolean isStatus() {
-        return status;
+        return visivel;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setStatus(boolean visivel) {
+        this.visivel = visivel;
     }
 
     public int[] getAvaliacao() {
