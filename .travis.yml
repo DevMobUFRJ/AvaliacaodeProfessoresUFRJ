@@ -1,0 +1,5 @@
+languagelanguage: node_js
+node_js:
+  - "0.10.x"
+before_install:
+  - "cd server"
