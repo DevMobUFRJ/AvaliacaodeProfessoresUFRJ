@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="ratingBar" parent="@android:style/Widget.RatingBar">
-        <item name="android:progressDrawable">@drawable/estrelas</item>
-        <item name="android:minHeight">50dip</item>
-        <item name="android:maxHeight">50dip</item>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/yellow</item>
+        <item name="colorControlActivated">@color/yellow</item>
     </style>
 </resources>
