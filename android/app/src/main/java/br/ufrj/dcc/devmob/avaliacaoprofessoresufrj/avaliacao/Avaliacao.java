@@ -27,6 +27,27 @@ public class Avaliacao{
         visivel = true;
     }
 
+    /**
+     * Construtor padrao ideal para uso na hora de salvar uma avaliacao no servidor.
+     * @param dreAluno
+     * @param matProf
+     * @param comentario
+     * @param nota
+     */
+    public Avaliacao(String dreAluno, String matProf, String comentario, float nota, int[] tags){
+        new Avaliacao(-1, dreAluno, matProf, comentario, nota, new Date(), true, tags);
+    }
+
+    public Avaliacao(int id, String dreAluno, String matProf, String comentario, float nota, Date data, boolean visivel, int[] tags){
+        this.id = id;
+        this.dreAluno = dreAluno;
+        this.matProf = matProf;
+        this.comentario = comentario;
+        this.nota = nota;
+        this.data = data;
+        this.visivel = visivel;
+        this.tags = tags;
+    }
 
     public float setNota(float fNota){
 
