@@ -2,15 +2,13 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var AvaliacaoSchema   = new Schema({
-	_id: Number,
-	dreAluno: String,
-	matProf: String,
-	comentario: String,
-	nota: Number,
+	dreAluno: { type: String, required: true },
+	matProf: { type: String, required: true} ,
+	comentario: { type: String, required: false, trim: true},
+	nota: { type: Number, required: true} ,
 	data: { type: Date, default: Date.now },
-	visivel: Boolean,
-	tags: [{ type: Number, ref: 'Tag'}]
-
+	visivel: { type: Boolean, default: true },
+	tags: [{ type: Number, ref: 'Tag', default: undefined }]
 });
 
 module.exports.avaliacao = mongoose.model('Avaliacao', AvaliacaoSchema);
