@@ -1,4 +1,4 @@
-package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj;
+package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.avaliacao;
 
 import java.util.Date;
 

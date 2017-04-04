@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.avaliacao.Avaliacao;
 
-public class Form1 extends Activity{
+public class FormActivity extends Activity{
 
     // Substituir depois pelas variaveis globais
     String dreAluno = "115545454";
