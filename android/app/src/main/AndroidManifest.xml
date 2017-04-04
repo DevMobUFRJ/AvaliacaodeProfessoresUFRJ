@@ -21,8 +21,9 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".Form1"></activity>
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".FormActivity"/>
     </application>
 
 </manifest>

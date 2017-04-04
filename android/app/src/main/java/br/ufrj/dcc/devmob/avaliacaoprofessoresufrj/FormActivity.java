@@ -9,6 +9,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.avaliacao.Avaliacao;
+
 public class Form1 extends Activity{
 
     // Substituir depois pelas variaveis globais
