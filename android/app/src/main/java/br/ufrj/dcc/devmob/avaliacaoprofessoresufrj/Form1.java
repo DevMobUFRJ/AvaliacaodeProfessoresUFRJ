@@ -1,13 +1,6 @@
 package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,8 +8,6 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.lang.reflect.Array;
 
 public class Form1 extends Activity{
 
@@ -215,7 +206,7 @@ public class Form1 extends Activity{
                         mAvaliacao.setComentario(coment);
 
                         // Envia avaliação pro servidor
-                        mAvaliacao.setAvaliacao(btn_aux);
+                        mAvaliacao.setTags(btn_aux);
 
                         Toast.makeText(getApplicationContext(), "Sua resposta foi salva", Toast.LENGTH_LONG).show();
                         if (toast[0] != null){

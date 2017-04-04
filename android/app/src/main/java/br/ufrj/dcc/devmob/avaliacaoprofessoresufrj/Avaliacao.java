@@ -1,5 +1,7 @@
 package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj;
 
+import java.util.Date;
+
 /**
  * Created by devmob on 24/03/17.
  */
@@ -11,9 +13,19 @@ public class Avaliacao{
     private String matProf;
     private String comentario;
     private float nota;
-    private String data;
+    private Date data;
     private boolean visivel;
-    private int[] avaliacao;
+    private int[] tags;
+
+    public Avaliacao(){
+        dreAluno = "";
+        matProf = "";
+        comentario = "";
+        nota = -1;
+        data = new Date();
+        data.setTime(System.currentTimeMillis());
+        visivel = true;
+    }
 
 
     public float setNota(float fNota){
@@ -51,11 +63,11 @@ public class Avaliacao{
         return nota;
     }
 
-    public String getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
@@ -67,12 +79,20 @@ public class Avaliacao{
         this.visivel = visivel;
     }
 
-    public int[] getAvaliacao() {
-        return avaliacao;
+    public int[] getTags() {
+        return tags;
     }
 
-    public void setAvaliacao(int[] avaliacao) {
-        this.avaliacao = avaliacao;
+    public void setTags(int[] tags) {
+        this.tags = tags;
+    }
+
+    public void addTag(int tagId){
+        int[] aux = tags.clone();
+        tags = new int[aux.length + 1];
+        for(int i = 0; i < aux.length; i++)
+            tags[i] = aux[i];
+        tags[aux.length + 1] = tagId;
     }
 
     public String getMatProf() {
