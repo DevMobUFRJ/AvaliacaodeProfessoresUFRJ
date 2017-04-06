@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303f9f</color>
     <color name="colorAccent">#FF4081</color>
     <color name="CorFundo">#f1f1f1</color>
-    <color name="yellow">#e6e600</color>
+    <color name="yellow">#FDD835</color>
     <color name="black">#000000</color>
     <color name="fundo">#3faadf</color>
 </resources>

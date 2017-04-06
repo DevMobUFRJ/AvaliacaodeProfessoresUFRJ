@@ -44,5 +44,6 @@ public class HomeActivity extends Activity{
                 Toast.makeText(getApplicationContext(),valorclicado,Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

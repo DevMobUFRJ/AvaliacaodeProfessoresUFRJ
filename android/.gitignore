@@ -32,10 +32,50 @@ proguard/
 # Android Studio captures folder
 captures/
 
-# Intellij
+# Signing files
+.signing/
+
+# NDK
+obj/
+
+# IntelliJ IDEA
 *.iml
+*.iws
+/out/
+
+# User-specific configurations
+.idea/libraries/
 .idea/workspace.xml
-.idea/libraries
+.idea/tasks.xml
+.idea/.name
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/datasources.xml
+.idea/dataSources.ids
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package Files #
+*.jar
+*.war
+*.ear
 
 # Keystore files
 *.jks

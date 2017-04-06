@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Form1"
+    tools:context="br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.FormActivity"
     android:background="@color/CorFundo">
 
     <Button
@@ -63,13 +63,17 @@
 
     <RatingBar
         android:id="@+id/ratingBar"
-        style="@style/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_mat"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
-        android:stepSize="0.5" />
+        android:scaleType="fitCenter"
+        android:stepSize="0.5"
+        android:backgroundTint="@color/yellow"
+        android:theme="@style/RatingBar"
+
+        />
 
     <Button
         android:id="@+id/btn_mat"

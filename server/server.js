@@ -26,6 +26,7 @@ app.use(morgan('dev')); // log requests to the console
 // configure body parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.set('json spaces', 2);
 
 
 // ROUTES FOR OUR API
