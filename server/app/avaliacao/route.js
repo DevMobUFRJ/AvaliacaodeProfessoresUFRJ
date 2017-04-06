@@ -89,7 +89,7 @@ avaliacao_route.route("/docente/:matProf_q")
 	Avaliacao.find({matProf: req.params.matProf_q}, function(err, avs){
 		if (err)
 		res.send(err);
-		res.status(200).json({status: "ok", avaliacoes: avs});
+		res.status(200).json(avs);
 	});
 });
 
@@ -97,8 +97,8 @@ avaliacao_route.route("/aluno/:dreAluno_q")
 .get(function(req, res){
 	Avaliacao.find({dreAluno: req.params.dreAluno_q}, function(err, avs){
 		if (err)
-		res.send(err);
-		res.status(200).json({status: "ok", avaliacoes: avs});
+		  res.send(err);
+		res.status(200).json(avs);
 	});
 });
 
