@@ -1,5 +1,7 @@
 package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.avaliacao;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Date;
 
 /**
@@ -8,6 +10,7 @@ import java.util.Date;
 
 public class Avaliacao{
 
+    @SerializedName(value = "_id")
     private int id;
     private String dreAluno;
     private String matProf;
