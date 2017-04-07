@@ -8,6 +8,11 @@ public class Tag{
     private int id;
     private String nome;
     private int clique;
+    private int dit_valor = 0;
+
+    public int getDid() {return dit_valor;}
+
+    public void setDidatica (int didatica) { this.dit_valor = didatica; }
 
     public int getId() {
         return id;

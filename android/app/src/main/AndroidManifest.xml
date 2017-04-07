@@ -24,7 +24,6 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".FormActivity" />
         <activity android:name=".Busca" />
-        <activity android:name=".avaliacao_feitas" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">

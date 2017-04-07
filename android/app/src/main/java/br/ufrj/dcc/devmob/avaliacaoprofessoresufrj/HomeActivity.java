@@ -45,17 +45,6 @@ public class HomeActivity extends Activity{
                 String valorclicado = tela.getItemAtPosition(codigotela).toString();
                 //Toast.makeText(getApplicationContext(),valorclicado,Toast.LENGTH_SHORT).show();
 
-                //DESATIVADO ENQUANTO NÃO É FEITA A TELA DE VISUALIZAÇÃO DE AVALIAÇÕES//
-                if (click == 1) {
-                    switch (position) {
-                        default:
-                            Intent a = new Intent(HomeActivity.this, avaliacao_feitas.class);
-                            a.putExtra("Nome_mat", valorclicado);
-                            startActivity(a);
-                            break;
-                    }
-
-                } else {
                     switch (position) {
                         default:
                             Intent a = new Intent(HomeActivity.this, FormActivity.class);
@@ -63,7 +52,7 @@ public class HomeActivity extends Activity{
                             startActivity(a);
                             break;
                     }
-                }
+
 
             }
         });

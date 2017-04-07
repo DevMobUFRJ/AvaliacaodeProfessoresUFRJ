@@ -16,9 +16,6 @@ public class FormActivity extends Activity{
 
     // Substituir depois pelas variaveis globais
     String dreAluno = "115545454";
-
-
-
     EditText comentario;
     TextView txt_mat;
     Button btn_prox;
@@ -28,13 +25,12 @@ public class FormActivity extends Activity{
     Button btn3;
     Button btn4;
     Button btn5;
+    Tag valores = new Tag();
     static float nota;
     RatingBar rtg_1;
     Avaliacao mAvaliacao = new Avaliacao();
     int[] btn_aux = new int[5];
     int bot = 0;
-    Tag teste = new Tag();
-    int click = teste.getClique();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +54,8 @@ public class FormActivity extends Activity{
         final GradientDrawable btn4Shape = (GradientDrawable)btn4.getBackground();
         final GradientDrawable btn5Shape = (GradientDrawable)btn5.getBackground();
         final Toast[] toast = new Toast[1];
+
+
 
 
 
@@ -228,9 +226,8 @@ public class FormActivity extends Activity{
                         if (toast[0] != null){
                             toast[0].cancel();
                         }
-                        click = 1;
-                        teste.setClique(click);
                         finish();
+                        btn5Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
                     }
                  });
 
