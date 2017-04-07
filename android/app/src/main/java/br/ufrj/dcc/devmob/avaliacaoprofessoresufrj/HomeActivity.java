@@ -45,7 +45,7 @@ public class HomeActivity extends Activity{
                 String valorclicado = tela.getItemAtPosition(codigotela).toString();
                 //Toast.makeText(getApplicationContext(),valorclicado,Toast.LENGTH_SHORT).show();
 
-
+                //DESATIVADO ENQUANTO NÃO É FEITA A TELA DE VISUALIZAÇÃO DE AVALIAÇÕES//
                 if (click == 1) {
                     switch (position) {
                         default:
@@ -58,7 +58,6 @@ public class HomeActivity extends Activity{
                 } else {
                     switch (position) {
                         default:
-                            click = 1;
                             Intent a = new Intent(HomeActivity.this, FormActivity.class);
                             a.putExtra("Nome_Mat", valorclicado);
                             startActivity(a);

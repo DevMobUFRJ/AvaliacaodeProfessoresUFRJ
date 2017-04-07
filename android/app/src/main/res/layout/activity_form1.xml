@@ -14,11 +14,11 @@
     <Button
         android:id="@+id/btn_didatica"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginEnd="13dp"
         android:layout_marginRight="11dp"
         android:layout_marginTop="39dp"
-        android:background="?attr/colorButtonNormal"
+        android:background="@drawable/buttonshape"
         android:text="Didática"
         android:layout_below="@+id/ratingBar"
         android:layout_toStartOf="@+id/btn_prox" />
@@ -26,14 +26,15 @@
     <Button
         android:text="@string/lbl_prox"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:id="@+id/btn_prox"
         style="@style/Base.Widget.AppCompat.Button.Colored"
-        android:background="#0277BD"
-
+        android:background="@drawable/buttonshape"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="17dp" />
+        android:layout_marginBottom="17dp"
+        android:backgroundTint="#0277BD"
+        />
 
     <TextView
         android:text="@string/lbl_mat"
@@ -47,7 +48,7 @@
     <EditText
         android:id="@+id/edt_com"
         style="@android:style/TextAppearance.Holo.Widget.EditText"
-        android:layout_width="250dp"
+        android:layout_width="500dp"
         android:layout_height="175dp"
         android:background="@android:color/background_light"
         android:hint="Comentários"
@@ -56,8 +57,8 @@
         android:gravity="top|left"
         android:layout_marginBottom="19dp"
         android:layout_above="@+id/btn_prox"
-        android:layout_alignStart="@+id/btn_didatica"
-        android:layout_alignEnd="@+id/btn_paciencia" />
+        android:layout_centerHorizontal="true"
+        />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -76,20 +77,19 @@
     <Button
         android:id="@+id/btn_mat"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorButtonNormal"
+        android:layout_height="40sp"
         android:text="Material"
-        android:layout_alignBaseline="@+id/btn_didatica"
-        android:layout_alignBottom="@+id/btn_didatica"
-        android:layout_alignStart="@+id/btn_prox" />
+        android:background="@drawable/buttonshape"
+        android:layout_above="@+id/btn_organizacao"
+        android:layout_toEndOf="@+id/btn_didatica" />
 
     <Button
         android:id="@+id/btn_organizacao"
         android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorButtonNormal"
+        android:layout_height="40dp"
+        android:background="@drawable/buttonshape"
         android:text="Organização"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="16dp"
         android:layout_below="@+id/btn_didatica"
         android:layout_alignStart="@+id/ratingBar" />
 
@@ -97,26 +97,24 @@
         android:id="@+id/btn_comp"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginRight="18dp"
-        android:background="?attr/colorButtonNormal"
+        android:background="@drawable/buttonshape"
         android:text="Compreensão"
-        android:layout_marginEnd="11dp"
-        android:layout_alignBaseline="@+id/btn_organizacao"
-        android:layout_alignBottom="@+id/btn_organizacao"
-        android:layout_alignEnd="@+id/btn_paciencia" />
+        android:layout_marginStart="12dp"
+        android:layout_alignTop="@+id/btn_organizacao"
+        android:layout_toEndOf="@+id/btn_organizacao" />
 
     <Button
         android:id="@+id/btn_paciencia"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btn_mat"
-        android:layout_alignBottom="@+id/btn_mat"
+        android:layout_height="40dp"
         android:layout_marginLeft="13dp"
         android:layout_marginStart="13dp"
         android:layout_toEndOf="@+id/btn_mat"
         android:layout_toRightOf="@+id/btn_mat"
-        android:background="?attr/colorButtonNormal"
-        android:text="Paciência" />
+        android:background="@drawable/buttonshape"
+        android:text="Paciência"
+        android:layout_alignBottom="@+id/btn_mat" />
 
 </RelativeLayout>
