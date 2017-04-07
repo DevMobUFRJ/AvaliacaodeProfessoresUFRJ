@@ -18,6 +18,8 @@ import java.lang.reflect.Array;
 public class HomeActivity extends Activity{
 
     private ListView tela;
+    Tag teste = new Tag();
+    int click = 0;
 
     //itens que ficarão na tela
     private String Itens[]={"Joao - Computacao","Mario Ricardo - Geo. Analitica", "Geovana - História da Arte","Joao - Computacao","Mario Ricardo - Geo. Analitica", "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica", "Geovana - História da Arte" };
@@ -43,12 +45,25 @@ public class HomeActivity extends Activity{
                 String valorclicado = tela.getItemAtPosition(codigotela).toString();
                 //Toast.makeText(getApplicationContext(),valorclicado,Toast.LENGTH_SHORT).show();
 
-                switch (position) {
-                    default:
-                        Intent a = new Intent(HomeActivity.this, FormActivity.class);
-                        a.putExtra("Nome_Mat" , valorclicado);
-                        startActivity(a);
-                        break;
+
+                if (click == 1) {
+                    switch (position) {
+                        default:
+                            Intent a = new Intent(HomeActivity.this, avaliacao_feitas.class);
+                            a.putExtra("Nome_mat", valorclicado);
+                            startActivity(a);
+                            break;
+                    }
+
+                } else {
+                    switch (position) {
+                        default:
+                            click = 1;
+                            Intent a = new Intent(HomeActivity.this, FormActivity.class);
+                            a.putExtra("Nome_Mat", valorclicado);
+                            startActivity(a);
+                            break;
+                    }
                 }
 
             }

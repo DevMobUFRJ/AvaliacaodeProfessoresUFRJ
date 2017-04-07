@@ -31,6 +31,8 @@ public class FormActivity extends Activity{
     Avaliacao mAvaliacao = new Avaliacao();
     int[] btn_aux = new int[5];
     int bot = 0;
+    Tag teste = new Tag();
+    int click = teste.getClique();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +50,6 @@ public class FormActivity extends Activity{
         txt_mat = (TextView) findViewById(R.id.txt_mat);
         btn_prox = (Button) findViewById(R.id.btn_prox);
         comentario = (EditText) findViewById(R.id.edt_com);
-
-
 
         //mAvaliacao.setMatProf(b.getString("MatProf"));
         //mAvaliacao.setId(b.getString("CODDISC"));
@@ -214,6 +214,8 @@ public class FormActivity extends Activity{
                         if (toast[0] != null){
                             toast[0].cancel();
                         }
+                        click = 1;
+                        teste.setClique(click);
                         finish();
                     }
                 });

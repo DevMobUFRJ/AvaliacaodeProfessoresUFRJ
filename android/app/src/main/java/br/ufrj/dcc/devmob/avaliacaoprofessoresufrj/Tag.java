@@ -4,13 +4,18 @@ package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj;
  * Created by devmob on 04/04/17.
  */
 
-public class Tag {
+public class Tag{
     private int id;
     private String nome;
+    private int clique;
 
     public int getId() {
         return id;
     }
+
+    public int getClique() { return clique;}
+
+    public void setClique(int clique) { this.clique = clique; }
 
     public void setId(int id) {
         this.id = id;
