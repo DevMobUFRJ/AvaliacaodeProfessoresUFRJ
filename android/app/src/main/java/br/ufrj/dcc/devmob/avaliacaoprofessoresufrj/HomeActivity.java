@@ -29,7 +29,7 @@ public class HomeActivity extends Activity{
 
         tela = (ListView) findViewById(R.id.LV_tela);
 
-        ArrayAdapter<String> adaptador=new ArrayAdapter<String>(
+        final ArrayAdapter<String> adaptador = new ArrayAdapter<String>(
                 getApplicationContext(),
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1,
@@ -39,11 +39,22 @@ public class HomeActivity extends Activity{
         tela.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                int codigotela=position;
-                String valorclicado= tela.getItemAtPosition(codigotela).toString();
+                int codigotela = position;
+                String valorclicado = tela.getItemAtPosition(codigotela).toString();
                 Toast.makeText(getApplicationContext(),valorclicado,Toast.LENGTH_SHORT).show();
+
+                switch (position) {
+                    default:
+                        Intent a = new Intent(HomeActivity.this, FormActivity.class);
+                        a.putExtra("Nome_Mat" , valorclicado);
+                        startActivity(a);
+                        break;
+                }
+
             }
         });
 
+
     }
-}
+
+    }

@@ -13,27 +13,27 @@
 
     <Button
         android:id="@+id/btn_didatica"
-        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ratingBar"
-        android:layout_marginEnd="11dp"
+        android:layout_marginEnd="13dp"
         android:layout_marginRight="11dp"
         android:layout_marginTop="39dp"
-        android:layout_toLeftOf="@+id/btn_prox"
-        android:layout_toStartOf="@+id/btn_prox"
+        android:background="?attr/colorButtonNormal"
         android:text="Didática"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:layout_below="@+id/ratingBar"
+        android:layout_toStartOf="@+id/btn_prox" />
 
     <Button
         android:text="@string/lbl_prox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:id="@+id/btn_prox"
         style="@style/Base.Widget.AppCompat.Button.Colored"
-        android:background="@color/colorPrimary" />
+        android:background="#0277BD"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp" />
 
     <TextView
         android:text="@string/lbl_mat"
@@ -49,17 +49,15 @@
         style="@android:style/TextAppearance.Holo.Widget.EditText"
         android:layout_width="250dp"
         android:layout_height="175dp"
-        android:layout_alignLeft="@+id/btn_organizacao"
-        android:layout_alignStart="@+id/btn_organizacao"
-        android:layout_below="@+id/btn_organizacao"
-        android:layout_marginTop="39dp"
         android:background="@android:color/background_light"
-        android:ems="10"
         android:hint="Comentários"
         android:inputType="textMultiLine"
-        android:padding="4dp"
-        android:selectAllOnFocus="false"
-        android:singleLine="false" />
+        android:padding="5dp"
+        android:gravity="top|left"
+        android:layout_marginBottom="19dp"
+        android:layout_above="@+id/btn_prox"
+        android:layout_alignStart="@+id/btn_didatica"
+        android:layout_alignEnd="@+id/btn_paciencia" />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -79,45 +77,46 @@
         android:id="@+id/btn_mat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="?attr/colorButtonNormal"
         android:text="Material"
-        android:layout_above="@+id/btn_organizacao"
-        android:layout_toRightOf="@+id/btn_didatica"
-        android:layout_toEndOf="@+id/btn_didatica" />
+        android:layout_alignBaseline="@+id/btn_didatica"
+        android:layout_alignBottom="@+id/btn_didatica"
+        android:layout_alignStart="@+id/btn_prox" />
 
     <Button
         android:id="@+id/btn_organizacao"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
+        android:background="?attr/colorButtonNormal"
         android:text="Organização"
+        android:layout_marginTop="17dp"
         android:layout_below="@+id/btn_didatica"
-        android:layout_alignLeft="@+id/btn_didatica"
-        android:layout_alignStart="@+id/btn_didatica"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp" />
+        android:layout_alignStart="@+id/ratingBar" />
 
     <Button
         android:id="@+id/btn_comp"
-        android:layout_width="wrap_content"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="Compreensão"
         android:layout_marginRight="18dp"
-        android:layout_marginEnd="18dp"
+        android:background="?attr/colorButtonNormal"
+        android:text="Compreensão"
+        android:layout_marginEnd="11dp"
         android:layout_alignBaseline="@+id/btn_organizacao"
         android:layout_alignBottom="@+id/btn_organizacao"
-        android:layout_alignRight="@+id/btn_paciencia"
         android:layout_alignEnd="@+id/btn_paciencia" />
 
     <Button
         android:id="@+id/btn_paciencia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Paciência"
         android:layout_alignBaseline="@+id/btn_mat"
         android:layout_alignBottom="@+id/btn_mat"
-        android:layout_toRightOf="@+id/btn_mat"
-        android:layout_toEndOf="@+id/btn_mat"
         android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp" />
+        android:layout_marginStart="13dp"
+        android:layout_toEndOf="@+id/btn_mat"
+        android:layout_toRightOf="@+id/btn_mat"
+        android:background="?attr/colorButtonNormal"
+        android:text="Paciência" />
 
 </RelativeLayout>
