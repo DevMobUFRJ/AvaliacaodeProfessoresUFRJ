@@ -34,7 +34,7 @@ avaliacao_route.route('/')
 .get(function(req, res) {
 	Avaliacao.find(function(err, avs){
 		if (err)
-		res.send(err);
+		  res.send(err);
 
 		res.json(avs);
 	});
@@ -48,7 +48,8 @@ avaliacao_route.route('/:id_avaliacao')
 .get(function(req, res) {
 	Avaliacao.findById(req.params.id_avaliacao, function(err, av) {
 		if (err)
-		res.send(err);
+		  res.send(err);
+
 		res.json({avaliacao: av});
 	});
 })
@@ -56,15 +57,14 @@ avaliacao_route.route('/:id_avaliacao')
 // update avaliacao com id
 .put(function(req, res) {
 	Avaliacao.findById(req.params.id_avaliacao, function(err, av) {
-
 		if (err)
-		res.send(err);
+		  res.send(err);
 
 		av.name = req.body.dreAluno;
 
 		av.save(function(err) {
 			if (err)
-			res.send(err);
+        res.send(err);
 
 			res.json({ message: 'Avaliacao atualizada!' });
 		});
@@ -78,7 +78,7 @@ avaliacao_route.route('/:id_avaliacao')
 		_id: req.params.id_avaliacao
 	}, function(err, av) {
 		if (err)
-		res.send(err);
+		  res.send(err);
 
 		res.json({ message: 'Successfully deleted' });
 	});
@@ -88,7 +88,7 @@ avaliacao_route.route("/docente/:matProf_q")
 .get(function(req, res){
 	Avaliacao.find({matProf: req.params.matProf_q}, function(err, avs){
 		if (err)
-		res.send(err);
+		  res.send(err);
 		res.status(200).json(avs);
 	});
 });

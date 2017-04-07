@@ -41,7 +41,7 @@ public class HomeActivity extends Activity{
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 int codigotela = position;
                 String valorclicado = tela.getItemAtPosition(codigotela).toString();
-                Toast.makeText(getApplicationContext(),valorclicado,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),valorclicado,Toast.LENGTH_SHORT).show();
 
                 switch (position) {
                     default:

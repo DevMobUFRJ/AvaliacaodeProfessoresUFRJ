@@ -17,7 +17,7 @@
             android:id="@+id/autorizarSiga"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:background="@color/colorPrimary"
+            android:background="#0277BD"
             android:textColor="#ffffffff"/>
 
         <ImageView

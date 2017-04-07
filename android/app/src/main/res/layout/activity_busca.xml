@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Busca">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#0277BD"
+        android:text="Button"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="85dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Matéria/Professor"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <ListView
+        android:layout_width="378dp"
+        android:layout_height="404dp"
+        tools:layout_editor_absoluteY="155dp"
+        tools:layout_editor_absoluteX="3dp" />
+</android.support.constraint.ConstraintLayout>

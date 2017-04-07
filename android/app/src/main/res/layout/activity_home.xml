@@ -4,22 +4,24 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fundo">
+    android:background="@color/CorFundo">
 
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
-        android:background="@color/black"
-        android:gravity="center" >
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
             android:layout_margin="5dp"
-            android:text="Fixed Header"
+            android:text="Avaliações não feitas"
             android:textColor="#FFFF"
             android:textSize="20sp" />
     </RelativeLayout>
@@ -28,7 +30,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/header"
-        android:id="@+id/LV_tela"/>
+        android:id="@+id/LV_tela"
+        android:background="@color/CorFundo"
+        />
 
 
 
