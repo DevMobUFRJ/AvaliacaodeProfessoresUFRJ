@@ -32,7 +32,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="17dp"
         android:background="@drawable/buttonshape"
-        android:backgroundTint="#0277BD"
+        android:backgroundTint="#295c81"
         android:text="Editar" />
 
     <TextView

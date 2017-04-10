@@ -80,13 +80,13 @@ public class FormActivity extends Activity{
 
                 if (btn_aux[bot] == 0) {
                     btn_aux[bot] = 1;
-                    btn1Shape.setColor(android.graphics.Color.parseColor("#66BB6A"));
+                    btn1Shape.setColor(android.graphics.Color.parseColor("#0fce6d"));
                     btn1.setTextColor(getResources().getColor(R.color.CorFundo));
                     toast[0] = Toast.makeText(getApplicationContext(), "Didática avaliada como positiva!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else if (btn_aux[bot] == 1){
                     btn_aux[bot] = -1;
-                    btn1Shape.setColor(android.graphics.Color.parseColor("#EF5350"));
+                    btn1Shape.setColor(android.graphics.Color.parseColor("#ce0f26"));
                     toast[0] = Toast.makeText(getApplicationContext(), "Didática avaliada como negativa!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else {
@@ -109,13 +109,13 @@ public class FormActivity extends Activity{
 
                 if (btn_aux[bot] == 0) {
                     btn_aux[bot] = 1;
-                    btn2Shape.setColor(android.graphics.Color.parseColor("#66BB6A"));
+                    btn2Shape.setColor(android.graphics.Color.parseColor("#0fce6d"));
                     btn2.setTextColor(getResources().getColor(R.color.CorFundo));
                     toast[0] = Toast.makeText(getApplicationContext(), "Material avaliada como positiva!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else if (btn_aux[bot] == 1){
                     btn_aux[bot] = -1;
-                    btn2Shape.setColor(android.graphics.Color.parseColor("#EF5350"));
+                    btn2Shape.setColor(android.graphics.Color.parseColor("#ce0f26"));
                     toast[0] = Toast.makeText(getApplicationContext(), "Material avaliada como negativa!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else {
@@ -137,13 +137,13 @@ public class FormActivity extends Activity{
 
                 if (btn_aux[bot] == 0) {
                     btn_aux[bot] = 1;
-                    btn3Shape.setColor(android.graphics.Color.parseColor("#66BB6A"));
+                    btn3Shape.setColor(android.graphics.Color.parseColor("#0fce6d"));
                     btn3.setTextColor(getResources().getColor(R.color.CorFundo));
                     toast[0] = Toast.makeText(getApplicationContext(), "Paciência avaliada como positiva!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else if (btn_aux[bot] == 1){
                     btn_aux[bot] = -1;
-                    btn3Shape.setColor(android.graphics.Color.parseColor("#EF5350"));
+                    btn3Shape.setColor(android.graphics.Color.parseColor("#ce0f26"));
                     toast[0] = Toast.makeText(getApplicationContext(), "Paciência avaliada como negativa!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else {
@@ -164,13 +164,13 @@ public class FormActivity extends Activity{
 
                 if (btn_aux[bot] == 0) {
                     btn_aux[bot] = 1;
-                    btn4Shape.setColor(android.graphics.Color.parseColor("#66BB6A"));
+                    btn4Shape.setColor(android.graphics.Color.parseColor("#0fce6d"));
                     btn4.setTextColor(getResources().getColor(R.color.CorFundo));
                     toast[0] = Toast.makeText(getApplicationContext(), "Organização avaliada como positiva!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else if (btn_aux[bot] == 1){
                     btn_aux[bot] = -1;
-                    btn4Shape.setColor(android.graphics.Color.parseColor("#EF5350"));
+                    btn4Shape.setColor(android.graphics.Color.parseColor("#ce0f26"));
                     toast[0] = Toast.makeText(getApplicationContext(), "Organização avaliada como negativa!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else {
@@ -191,13 +191,13 @@ public class FormActivity extends Activity{
 
                 if (btn_aux[bot] == 0) {
                     btn_aux[bot] = 1;
-                    btn5Shape.setColor(android.graphics.Color.parseColor("#66BB6A"));
+                    btn5Shape.setColor(android.graphics.Color.parseColor("#0fce6d"));
                     btn5.setTextColor(getResources().getColor(R.color.CorFundo));
                     toast[0] = Toast.makeText(getApplicationContext(), "Compreensão avaliada como positiva!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else if (btn_aux[bot] == 1){
                     btn_aux[bot] = -1;
-                    btn5Shape.setColor(android.graphics.Color.parseColor("#EF5350"));
+                    btn5Shape.setColor(android.graphics.Color.parseColor("#ce0f26"));
                     toast[0] = Toast.makeText(getApplicationContext(), "Compreensão avaliada como negativa!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else {
