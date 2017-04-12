@@ -53,11 +53,15 @@ public class FormActivity extends Activity{
         final GradientDrawable btn3Shape = (GradientDrawable)btn3.getBackground();
         final GradientDrawable btn4Shape = (GradientDrawable)btn4.getBackground();
         final GradientDrawable btn5Shape = (GradientDrawable)btn5.getBackground();
+
+
+        btn1Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
+        btn2Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
+        btn3Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
+        btn4Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
+        btn5Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
+
         final Toast[] toast = new Toast[1];
-
-
-
-
 
         //mAvaliacao.setMatProf(b.getString("MatProf"));
         //mAvaliacao.setId(b.getString("CODDISC"));
@@ -227,7 +231,6 @@ public class FormActivity extends Activity{
                             toast[0].cancel();
                         }
                         finish();
-                        btn5Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
                     }
                  });
 
