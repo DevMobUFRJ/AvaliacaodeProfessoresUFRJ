@@ -22,7 +22,14 @@ public class HomeActivity extends Activity{
     int click = 0;
 
     //itens que ficarão na tela
-    private String Itens[]={"Joao - Computacao","Mario Ricardo - Geo. Analitica", "Geovana - História da Arte","Joao - Computacao","Mario Ricardo - Geo. Analitica", "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica", "Geovana - História da Arte" };
+    private String Itens[]={"Joao - Computacao","Mario Ricardo - Geo. Analitica",
+            "Geovana - História da Arte","Joao - Computacao","Mario Ricardo - Geo. Analitica",
+            "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica",
+            "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica",
+            "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica",
+            "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica",
+            "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica",
+            "Geovana - História da Arte"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

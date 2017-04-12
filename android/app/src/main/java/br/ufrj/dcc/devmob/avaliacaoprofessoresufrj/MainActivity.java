@@ -21,10 +21,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
     }
 
     @Override
+
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.autorizarSiga:
-                Intent i = new Intent(this, HomeActivity.class);
+                Intent i = new Intent(this, MenuActivity.class);
                 startActivity(i);
                 finish();
                 break;

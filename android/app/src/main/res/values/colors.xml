@@ -7,4 +7,6 @@
     <color name="yellow">#FDD835</color>
     <color name="black">#000000</color>
     <color name="fundo">#3faadf</color>
+    <color name="colorBotao">#295c81</color>
+    <color name="branco">#ffff</color>
 </resources>

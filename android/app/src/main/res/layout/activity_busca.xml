@@ -10,9 +10,9 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#0277BD"
-        android:text="Button"
-        android:textColor="@android:color/background_light"
+        android:backgroundTint="@color/colorBotao"
+        android:text="Buscar"
+        android:textColor="@color/branco"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="85dp" />
 
