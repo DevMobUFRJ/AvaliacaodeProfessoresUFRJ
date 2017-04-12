@@ -48,7 +48,7 @@ public class FormActivity extends Activity{
         btn5 = (Button) findViewById(R.id.btn_comp);
         txt_mat = (TextView) findViewById(R.id.txt_mat);
         btn_prox = (Button) findViewById(R.id.btn_prox);
-        comentario = (EditText) findViewById(R.id.edt_com);      
+        comentario = (EditText) findViewById(R.id.edt_com);
 
         final GradientDrawable btn1Shape = (GradientDrawable)btn1.getBackground();
         final GradientDrawable btn2Shape = (GradientDrawable)btn2.getBackground();
