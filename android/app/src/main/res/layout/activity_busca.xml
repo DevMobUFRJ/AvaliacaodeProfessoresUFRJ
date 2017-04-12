@@ -1,35 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_form1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Busca">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Busca"
+    android:background="@color/CorFundo"
+    >
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorBotao"
-        android:text="Buscar"
-        android:textColor="@color/branco"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="85dp" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Matéria/Professor"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="28dp" />
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Matéria/Professor"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+        />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorBotao"
+            android:text="Buscar"
+            android:textColor="@color/branco"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="85dp"
+            android:layout_below="@+id/editText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp" />
 
     <ListView
         android:layout_width="378dp"
         android:layout_height="404dp"
-        tools:layout_editor_absoluteY="155dp"
-        tools:layout_editor_absoluteX="3dp" />
+        tools:layout_editor_absoluteX="385dp"
+        tools:layout_editor_absoluteY="147dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/listView" />
 
-</android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>
+
+

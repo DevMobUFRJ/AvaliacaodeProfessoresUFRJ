@@ -23,7 +23,8 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme" />
         <activity android:name=".FormActivity" />
-        <activity android:name=".Busca" />
+        <activity
+            android:name=".Busca"            />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
