@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context="br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.SplashScreen"
     android:background="@drawable/splashscreen"
-
     >
 
 </RelativeLayout>

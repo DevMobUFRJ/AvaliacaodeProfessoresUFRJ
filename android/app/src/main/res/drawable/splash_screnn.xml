@@ -4,4 +4,11 @@
     <item
         android:drawable="@color/CorFundo"/>
 
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/splashscreen"
+            />
+    </item>
+
 </layer-list>
