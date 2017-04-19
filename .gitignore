@@ -1,0 +1,14 @@
+_windows/
+inspection/
+
+ui.lnf.xml
+vcs.xml
+web-browsers.xml
+project.default.xml
+github_settings.xml
+edditor.codeinsight.xml
+IntelliLang.xml
+gradle.run.settings.xml
+diff.xml
+debugger.xml
+androidStudioFirstRun.xml

@@ -6,7 +6,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="589dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:background="@color/CorFundo">
 
@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:background="#295c81"
+            android:backgroundTint="@color/colorBotao"
             android:text="Autorizar com SIGA"
             android:textColor="#ffffffff" />
 

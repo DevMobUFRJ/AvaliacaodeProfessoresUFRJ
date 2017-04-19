@@ -8,4 +8,5 @@
     <string name="lbl_prox">Proximo</string>
     <string name="lbl_mat">Materia</string>
     <string name="texto_caixa_de_texto">Comentários</string>
+    <string name="title_activity_tela_selecao">telaSelecao</string>
 </resources>
