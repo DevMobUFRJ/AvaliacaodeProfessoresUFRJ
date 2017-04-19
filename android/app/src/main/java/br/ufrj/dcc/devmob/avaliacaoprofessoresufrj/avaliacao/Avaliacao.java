@@ -11,7 +11,7 @@ import java.util.Date;
 public class Avaliacao{
 
     @SerializedName(value = "_id")
-    private int id;
+    private String id;
     private String dreAluno;
     private String matProf;
     private String comentario;
@@ -19,6 +19,11 @@ public class Avaliacao{
     private Date data;
     private boolean visivel;
     private int[] tags;
+    private int dit_valor;
+
+    public int getDid() {return dit_valor;}
+
+    public void setDidatica (int didatica) { this.dit_valor = didatica;  }
 
     public Avaliacao(){
         dreAluno = "";
@@ -38,10 +43,10 @@ public class Avaliacao{
      * @param nota
      */
     public Avaliacao(String dreAluno, String matProf, String comentario, float nota, int[] tags){
-        new Avaliacao(-1, dreAluno, matProf, comentario, nota, new Date(), true, tags);
+        new Avaliacao("", dreAluno, matProf, comentario, nota, new Date(), true, tags);
     }
 
-    public Avaliacao(int id, String dreAluno, String matProf, String comentario, float nota, Date data, boolean visivel, int[] tags){
+    public Avaliacao(String id, String dreAluno, String matProf, String comentario, float nota, Date data, boolean visivel, int[] tags){
         this.id = id;
         this.dreAluno = dreAluno;
         this.matProf = matProf;
@@ -59,11 +64,11 @@ public class Avaliacao{
 
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -125,5 +130,10 @@ public class Avaliacao{
 
     public void setMatProf(String matProf) {
         this.matProf = matProf;
+    }
+
+
+    public String toString(){
+        return "DRE: " + this.dreAluno + ". Docente: " + this.matProf + ". Nota: " + this.nota + ". Comentario: " + this.comentario + ". ";
     }
 }
