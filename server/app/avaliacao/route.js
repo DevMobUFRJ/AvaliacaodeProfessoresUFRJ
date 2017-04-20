@@ -15,16 +15,16 @@ avaliacao_route.route('/')
 	av.nota = req.body.nota;
   if(req.body.tags) av.tags = req.body.tags.split(',');
 
-	// VALIDAR COMENTÁRIO
+	// VALIDAR COMENTÁRIO !!!!!!!!!
 	// if (!comentarioValido(av.comentario)) { av.visivel = 0 ;}
 
 	av.save(function(err) {
 		if (err){
 			res.setHeader("Content-Type", "text/html");
-			res.status(400).json({status: "error", message: err.message});
+			res.status(400).json({message: err.message});
 		} else {
 			res.setHeader("Content-Type", "text/html");
-			res.status(200).json({status: "ok", message: 'Avaliacao criada', avaliacao: av });
+			res.status(200).json(av);
 		};
 	});
 
@@ -34,9 +34,9 @@ avaliacao_route.route('/')
 .get(function(req, res) {
 	Avaliacao.find(function(err, avs){
 		if (err)
-		  res.send(err);
-
-		res.json(avs);
+		  res.status(400).json({message: err.message});
+    else
+		  res.status(200).json(avs);
 	});
 });
 
@@ -48,9 +48,9 @@ avaliacao_route.route('/:id_avaliacao')
 .get(function(req, res) {
 	Avaliacao.findById(req.params.id_avaliacao, function(err, av) {
 		if (err)
-		  res.send(err);
-
-		res.json({avaliacao: av});
+		  res.status(400).json({message: err.message});
+    else
+		  res.status(200).json({avaliacao: av});
 	});
 })
 
@@ -58,16 +58,16 @@ avaliacao_route.route('/:id_avaliacao')
 .put(function(req, res) {
 	Avaliacao.findById(req.params.id_avaliacao, function(err, av) {
 		if (err)
-		  res.send(err);
-
-		av.name = req.body.dreAluno;
-
-		av.save(function(err) {
-			if (err)
-        res.send(err);
-
-			res.json({ message: 'Avaliacao atualizada!' });
-		});
+		  res.status(400).json({message: err.message});
+    else{
+  		av.name = req.body.dreAluno;
+  		av.save(function(err) {
+  			if (err)
+    		  res.status(400).json({message: err.message});
+        else
+  			  res.status(200).json({ message: 'Avaliacao atualizada!' });
+  		});
+    }
 
 	});
 })
@@ -78,9 +78,9 @@ avaliacao_route.route('/:id_avaliacao')
 		_id: req.params.id_avaliacao
 	}, function(err, av) {
 		if (err)
-		  res.send(err);
-
-		res.json({ message: 'Successfully deleted' });
+		  res.status(400).json({message: err.message});
+    else
+		  res.status(200).json({ message: 'Successfully deleted' });
 	});
 });
 
@@ -88,8 +88,9 @@ avaliacao_route.route("/docente/:matProf_q")
 .get(function(req, res){
 	Avaliacao.find({matProf: req.params.matProf_q}, function(err, avs){
 		if (err)
-		  res.send(err);
-		res.status(200).json(avs);
+		  res.status(400).json({message: err.message});
+    else
+		  res.status(200).json(avs);
 	});
 });
 
@@ -97,8 +98,9 @@ avaliacao_route.route("/aluno/:dreAluno_q")
 .get(function(req, res){
 	Avaliacao.find({dreAluno: req.params.dreAluno_q}, function(err, avs){
 		if (err)
-		  res.send(err);
-		res.status(200).json(avs);
+		  res.status(400).json({message: err.message});
+    else
+		  res.status(200).json(avs);
 	});
 });
 
