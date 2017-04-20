@@ -32,6 +32,9 @@ public class FormActivity extends Activity{
     int[] btn_aux = new int[5];
     int bot = 0;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,32 +50,28 @@ public class FormActivity extends Activity{
         btn_prox = (Button) findViewById(R.id.btn_prox);
         comentario = (EditText) findViewById(R.id.edt_com);
 
-
         final GradientDrawable btn1Shape = (GradientDrawable)btn1.getBackground();
         final GradientDrawable btn2Shape = (GradientDrawable)btn2.getBackground();
         final GradientDrawable btn3Shape = (GradientDrawable)btn3.getBackground();
         final GradientDrawable btn4Shape = (GradientDrawable)btn4.getBackground();
         final GradientDrawable btn5Shape = (GradientDrawable)btn5.getBackground();
-
-
         btn1Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
         btn2Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
         btn3Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
         btn4Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
         btn5Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
 
+
         final Toast[] toast = new Toast[1];
 
         //mAvaliacao.setMatProf(b.getString("MatProf"));
         //mAvaliacao.setId(b.getString("CODDISC"));
-
 
         String NomeMat = getIntent().getStringExtra("Nome_Mat");
         txt_mat.setText(NomeMat);
         if (toast[0] != null){
             toast[0].cancel();
         }
-
 
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
@@ -231,10 +230,12 @@ public class FormActivity extends Activity{
                             toast[0].cancel();
                         }
                         finish();
+
                     }
                  });
 
     }
+
 
 
     public void mostraValor()
@@ -246,6 +247,11 @@ public class FormActivity extends Activity{
             }
         });
     }
+
+    public void MudaCor(int bo){
+
+    }
+
 
 
 }
