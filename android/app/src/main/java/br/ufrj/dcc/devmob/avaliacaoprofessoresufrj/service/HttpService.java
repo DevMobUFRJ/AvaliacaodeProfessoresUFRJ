@@ -35,6 +35,10 @@ public interface HttpService {
 
     @FormUrlEncoded
     @POST("avaliacao")
-    Call<String> salvarAvaliacao(@Field("dreAluno") String dreAluno, @Field("matProf") String matProf, @Field("comentario") String comentario, @Field("nota") float nota, @Field("tags") int[] tags);
-
+    Call<Avaliacao> salvarAvaliacao(
+            @Field("dreAluno")String dreAluno,
+            @Field("matProf")String matProf,
+            @Field("comentario")String comentario,
+            @Field("nota")float nota,
+            @Field("tags")int[] tags );
 }

@@ -39,7 +39,13 @@ public class Avaliacao{
      * @param nota nota de 0 a 5 dada pelo Aluno
      */
     public Avaliacao(String dreAluno, String matProf, String comentario, float nota, int[] tags){
-        new Avaliacao("", dreAluno, matProf, comentario, nota, new Date(), true, tags);
+        this.id = "";
+        this.dreAluno = dreAluno;
+        this.matProf = matProf;
+        this.comentario = comentario;
+        this.nota = nota;
+        this.visivel = true;
+        this.tags = tags;
     }
 
     public Avaliacao(String id, String dreAluno, String matProf, String comentario, float nota, Date data, boolean visivel, int[] tags){
@@ -130,4 +136,5 @@ public class Avaliacao{
     public String toString(){
         return "DRE: " + this.dreAluno + ". Docente: " + this.matProf + ". Nota: " + this.nota + ". Comentario: " + this.comentario + ". ";
     }
+
 }
