@@ -8,7 +8,7 @@ public class Tag{
     private int id;
     private String nome;
     private int clique;
-    private int dit_valor = 0;
+    private int dit_valor;
 
     public int getDid() {return dit_valor;}
 

@@ -21,10 +21,6 @@ public class Avaliacao{
     private int[] tags;
     private int dit_valor;
 
-    public int getDid() {return dit_valor;}
-
-    public void setDidatica (int didatica) { this.dit_valor = didatica;  }
-
     public Avaliacao(){
         dreAluno = "";
         matProf = "";
@@ -36,14 +32,20 @@ public class Avaliacao{
     }
 
     /**
-     * Construtor padrao ideal para uso na hora de salvar uma avaliacao no servidor.
-     * @param dreAluno
-     * @param matProf
-     * @param comentario
-     * @param nota
+     * Construtor padrao ideal para uso na hora de salvar uma avaliacao nova no servidor.
+     * @param dreAluno DRE do Aluno avaliador
+     * @param matProf Matricula do Docente avaliado
+     * @param comentario Comentario redigido pelo Aluno avaliador
+     * @param nota nota de 0 a 5 dada pelo Aluno
      */
     public Avaliacao(String dreAluno, String matProf, String comentario, float nota, int[] tags){
-        new Avaliacao("", dreAluno, matProf, comentario, nota, new Date(), true, tags);
+        this.id = "";
+        this.dreAluno = dreAluno;
+        this.matProf = matProf;
+        this.comentario = comentario;
+        this.nota = nota;
+        this.visivel = true;
+        this.tags = tags;
     }
 
     public Avaliacao(String id, String dreAluno, String matProf, String comentario, float nota, Date data, boolean visivel, int[] tags){
@@ -58,10 +60,8 @@ public class Avaliacao{
     }
 
     public float setNota(float fNota){
-
         nota = fNota;
         return nota;
-
     }
 
     public String getId() {
@@ -100,12 +100,8 @@ public class Avaliacao{
         this.data = data;
     }
 
-    public boolean isStatus() {
+    public boolean isVisivel() {
         return visivel;
-    }
-
-    public void setStatus(boolean visivel) {
-        this.visivel = visivel;
     }
 
     public int[] getTags() {
@@ -132,8 +128,13 @@ public class Avaliacao{
         this.matProf = matProf;
     }
 
+    public int getDid() {return dit_valor;}
+
+    public void setDidatica (int didatica) { this.dit_valor = didatica;  }
+
 
     public String toString(){
         return "DRE: " + this.dreAluno + ". Docente: " + this.matProf + ". Nota: " + this.nota + ". Comentario: " + this.comentario + ". ";
     }
+
 }
