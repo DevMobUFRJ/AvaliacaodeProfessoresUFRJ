@@ -12,3 +12,5 @@ gradle.run.settings.xml
 diff.xml
 debugger.xml
 androidStudioFirstRun.xml
+androidEditors.xml
+gradle.settings.xml
