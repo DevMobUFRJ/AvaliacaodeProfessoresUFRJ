@@ -29,8 +29,8 @@ public class FormActivity extends Activity{
     static float nota;
     RatingBar rtg_1;
     Avaliacao mAvaliacao = new Avaliacao();
-    int[] btn_aux = new int[5];
-    int bot = 0;
+    int[] valor_tag = new int[5];
+    int btn = 0;
 
 
 
@@ -69,31 +69,26 @@ public class FormActivity extends Activity{
 
         String NomeMat = getIntent().getStringExtra("Nome_Mat");
         txt_mat.setText(NomeMat);
-        if (toast[0] != null){
-            toast[0].cancel();
-        }
+        if (toast[0] != null) {toast[0].cancel();}
 
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
 
-                bot = 0;
-                if (toast[0] != null){
-                    toast[0].cancel();
-                }
-
-                if (btn_aux[bot] == 0) {
-                    btn_aux[bot] = 1;
+                btn = 0;
+                if (toast[0] != null) {toast[0].cancel();}
+                if (valor_tag[btn] == 0) {
+                    valor_tag[btn] = 1;
                     btn1Shape.setColor(android.graphics.Color.parseColor("#0fce6d"));
                     btn1.setTextColor(getResources().getColor(R.color.CorFundo));
                     toast[0] = Toast.makeText(getApplicationContext(), "Didática avaliada como positiva!", Toast.LENGTH_SHORT);
                     toast[0].show();
-                } else if (btn_aux[bot] == 1){
-                    btn_aux[bot] = -1;
+                } else if (valor_tag[btn] == 1){
+                    valor_tag[btn] = -1;
                     btn1Shape.setColor(android.graphics.Color.parseColor("#ce0f26"));
                     toast[0] = Toast.makeText(getApplicationContext(), "Didática avaliada como negativa!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else {
-                    btn_aux[bot] = 0;
+                    valor_tag[btn] = 0;
                     btn1Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
                     btn1.setTextColor(getResources().getColor(R.color.black));
                     toast[0] = Toast.makeText(getApplicationContext(), "Didática avaliada como neutra", Toast.LENGTH_SHORT);
@@ -105,24 +100,24 @@ public class FormActivity extends Activity{
         btn2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
 
-                bot = 1;
+                btn = 1;
                 if (toast[0] != null){
                     toast[0].cancel();
                 }
 
-                if (btn_aux[bot] == 0) {
-                    btn_aux[bot] = 1;
+                if (valor_tag[btn] == 0) {
+                    valor_tag[btn] = 1;
                     btn2Shape.setColor(android.graphics.Color.parseColor("#0fce6d"));
                     btn2.setTextColor(getResources().getColor(R.color.CorFundo));
                     toast[0] = Toast.makeText(getApplicationContext(), "Material avaliada como positiva!", Toast.LENGTH_SHORT);
                     toast[0].show();
-                } else if (btn_aux[bot] == 1){
-                    btn_aux[bot] = -1;
+                } else if (valor_tag[btn] == 1){
+                    valor_tag[btn] = -1;
                     btn2Shape.setColor(android.graphics.Color.parseColor("#ce0f26"));
                     toast[0] = Toast.makeText(getApplicationContext(), "Material avaliada como negativa!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else {
-                    btn_aux[bot] = 0;
+                    valor_tag[btn] = 0;
                     btn2Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
                     btn2.setTextColor(getResources().getColor(R.color.black));
                     toast[0] = Toast.makeText(getApplicationContext(), "Material avaliada como neutra", Toast.LENGTH_SHORT);
@@ -133,24 +128,24 @@ public class FormActivity extends Activity{
         btn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
 
-                bot = 2;
+                btn = 2;
                 if (toast[0] != null){
                     toast[0].cancel();
                 }
 
-                if (btn_aux[bot] == 0) {
-                    btn_aux[bot] = 1;
+                if (valor_tag[btn] == 0) {
+                    valor_tag[btn] = 1;
                     btn3Shape.setColor(android.graphics.Color.parseColor("#0fce6d"));
                     btn3.setTextColor(getResources().getColor(R.color.CorFundo));
                     toast[0] = Toast.makeText(getApplicationContext(), "Paciência avaliada como positiva!", Toast.LENGTH_SHORT);
                     toast[0].show();
-                } else if (btn_aux[bot] == 1){
-                    btn_aux[bot] = -1;
+                } else if (valor_tag[btn] == 1){
+                    valor_tag[btn] = -1;
                     btn3Shape.setColor(android.graphics.Color.parseColor("#ce0f26"));
                     toast[0] = Toast.makeText(getApplicationContext(), "Paciência avaliada como negativa!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else {
-                    btn_aux[bot] = 0;
+                    valor_tag[btn] = 0;
                     btn3Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
                     btn3.setTextColor(getResources().getColor(R.color.black));
                     toast[0] = Toast.makeText(getApplicationContext(), "Paciência avaliada como neutra", Toast.LENGTH_SHORT);
@@ -160,24 +155,24 @@ public class FormActivity extends Activity{
 
         btn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
-                bot = 3;
+                btn = 3;
                 if (toast[0] != null){
                     toast[0].cancel();
                 }
 
-                if (btn_aux[bot] == 0) {
-                    btn_aux[bot] = 1;
+                if (valor_tag[btn] == 0) {
+                    valor_tag[btn] = 1;
                     btn4Shape.setColor(android.graphics.Color.parseColor("#0fce6d"));
                     btn4.setTextColor(getResources().getColor(R.color.CorFundo));
                     toast[0] = Toast.makeText(getApplicationContext(), "Organização avaliada como positiva!", Toast.LENGTH_SHORT);
                     toast[0].show();
-                } else if (btn_aux[bot] == 1){
-                    btn_aux[bot] = -1;
+                } else if (valor_tag[btn] == 1){
+                    valor_tag[btn] = -1;
                     btn4Shape.setColor(android.graphics.Color.parseColor("#ce0f26"));
                     toast[0] = Toast.makeText(getApplicationContext(), "Organização avaliada como negativa!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else {
-                    btn_aux[bot] = 0;
+                    valor_tag[btn] = 0;
                     btn4Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
                     btn4.setTextColor(getResources().getColor(R.color.black));
                     toast[0] = Toast.makeText(getApplicationContext(), "Organização avaliada como neutra", Toast.LENGTH_SHORT);
@@ -187,24 +182,24 @@ public class FormActivity extends Activity{
 
         btn5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
-                bot = 4;
+                btn = 4;
                 if (toast[0] != null){
                     toast[0].cancel();
                 }
 
-                if (btn_aux[bot] == 0) {
-                    btn_aux[bot] = 1;
+                if (valor_tag[btn] == 0) {
+                    valor_tag[btn] = 1;
                     btn5Shape.setColor(android.graphics.Color.parseColor("#0fce6d"));
                     btn5.setTextColor(getResources().getColor(R.color.CorFundo));
                     toast[0] = Toast.makeText(getApplicationContext(), "Compreensão avaliada como positiva!", Toast.LENGTH_SHORT);
                     toast[0].show();
-                } else if (btn_aux[bot] == 1){
-                    btn_aux[bot] = -1;
+                } else if (valor_tag[btn] == 1){
+                    valor_tag[btn] = -1;
                     btn5Shape.setColor(android.graphics.Color.parseColor("#ce0f26"));
                     toast[0] = Toast.makeText(getApplicationContext(), "Compreensão avaliada como negativa!", Toast.LENGTH_SHORT);
                     toast[0].show();
                 } else {
-                    btn_aux[bot] = 0;
+                    valor_tag[btn] = 0;
                     btn5Shape.setColor(android.graphics.Color.parseColor("#BDBDBD"));
                     btn5.setTextColor(getResources().getColor(R.color.black));
                     toast[0] = Toast.makeText(getApplicationContext(), "Compreensão avaliada como neutra", Toast.LENGTH_SHORT);
@@ -223,12 +218,10 @@ public class FormActivity extends Activity{
                         mAvaliacao.setComentario(coment);
 
                         // Envia avaliação pro servidor
-                        mAvaliacao.setTags(btn_aux);
+                        mAvaliacao.setTags(valor_tag);
 
                         Toast.makeText(getApplicationContext(), "Sua resposta foi salva", Toast.LENGTH_SHORT).show();
-                        if (toast[0] != null){
-                            toast[0].cancel();
-                        }
+                        if (toast[0] != null) {toast[0].cancel();}
                         finish();
 
                     }
@@ -247,11 +240,4 @@ public class FormActivity extends Activity{
             }
         });
     }
-
-    public void MudaCor(int bo){
-
-    }
-
-
-
 }

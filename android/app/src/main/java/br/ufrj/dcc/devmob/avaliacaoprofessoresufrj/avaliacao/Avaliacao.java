@@ -26,6 +26,8 @@ public class Avaliacao{
     private int[] tags = new int[Utils.tags_count];
     private int dit_valor;
 
+    
+
     public Avaliacao(){
         dreAluno = "";
         matProf = "";
@@ -38,10 +40,10 @@ public class Avaliacao{
 
     /**
      * Construtor padrao ideal para uso na hora de salvar uma avaliacao nova no servidor.
-     * @param dreAluno DRE do Aluno avaliador
+     * @param dreAluno DRE do br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Aluno.Aluno avaliador
      * @param matProf Matricula do Docente avaliado
-     * @param comentario Comentario redigido pelo Aluno avaliador
-     * @param nota nota de 0 a 5 dada pelo Aluno
+     * @param comentario Comentario redigido pelo br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Aluno.Aluno avaliador
+     * @param nota nota de 0 a 5 dada pelo br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Aluno.Aluno
      */
     public Avaliacao(String dreAluno, String matProf, String comentario, float nota, int[] tags){
         this.id = "";
@@ -124,6 +126,14 @@ public class Avaliacao{
             return false;
         tags[tag.getValue()] = valor;
         return true;
+    }
+
+    public void setTags(int[] valor){
+        int i = 0;
+        while (i<5){
+            tags[i] = valor[i];
+        }
+
     }
 
 
