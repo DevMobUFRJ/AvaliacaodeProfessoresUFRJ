@@ -37,6 +37,7 @@ disciplinaPeriodo_route.route('/')
 // ----------------------------------------------------
 disciplinaPeriodo_route.route('/:id')
 
+  //TODO trocar findById 
 	// consulta disciplinaPeriodo pelo id
 	.get(function(req, res) {
 		DisciplinaPeriodo.findById(req.params.id, function(err, disciplinaPeriodo) {

@@ -47,6 +47,9 @@ router.use(function(req, res, next) {
 router.use("/avaliacao", avaliacao_route);
 router.use("/disciplinaPeriodo", disciplinaPeriodo_route);
 router.use("/atributo", atributo_route);
+router.use("/aluno", aluno_route);
+router.use("/disciplina", disciplina_route);
+router.use("/docente", docente_route);
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {

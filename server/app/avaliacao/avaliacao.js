@@ -9,7 +9,7 @@ var AvaliacaoSchema   = new Schema({
 	data: { type: Date, default: Date.now },
 	dataAlteracao: { type: Date, default: Date.now },
 	visivel: { type: Boolean, default: true },
-	Atributos: [{ type: Number, ref: 'Atributo', default: undefined }]
+	atributos: [{ type: Number, ref: 'Atributo', default: undefined }]
 });
 
 module.exports.avaliacao = mongoose.model('Avaliacao', AvaliacaoSchema);

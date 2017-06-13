@@ -17,8 +17,6 @@ aluno_route.route('/')
 
 			res.json({ message: 'Aluno criada' });
 		});
-
-
 	})
 
 	// Ver todas as avaliacoes (accessed at GET http://localhost:8080/api/aluno)
@@ -41,25 +39,6 @@ aluno_route.route('/:dre')
 			if (err)
 				res.send(err);
 			res.json(aluno);
-		});
-	})
-
-	// update aluno com id
-	.put(function(req, res) {
-		Aluno.findById(req.params.dre, function(err, aluno) {
-
-			if (err)
-				res.send(err);
-
-			aluno.nome = req.body.nome;
-
-			aluno.save(function(err) {
-				if (err)
-					res.send(err);
-
-				res.json({ message: 'Aluno atualizado!' });
-			});
-
 		});
 	})
 

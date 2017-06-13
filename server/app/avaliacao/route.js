@@ -13,9 +13,9 @@ avaliacao_route.route('/')
 	av.matProf = req.body.matProf;
 	av.comentario = req.body.comentario;
 	av.nota = req.body.nota;
-  if(req.body.tags) av.atributo = req.body.tags;
+  if(req.body.tags) av.atributos = req.body.tags;
 
-	// VALIDAR COMENTÁRIO !!!!!!!!!
+	// TODO VALIDAR COMENTÁRIO !!!!!!!!!
 	// if (!comentarioValido(av.comentario)) { av.visivel = 0 ;}
 
 	av.save(function(err) {
@@ -84,24 +84,31 @@ avaliacao_route.route('/:id_avaliacao')
 	});
 });
 
+/**
+*  Lista todas as avaliacoes do Docente especificado
+*/
 avaliacao_route.route("/docente/:matProf_q")
-.get(function(req, res){
-	Avaliacao.find({matProf: req.params.matProf_q}, function(err, avs){
-		if (err)
-		  res.status(400).json({message: err.message});
-    else
-		  res.status(200).json(avs);
-	});
-});
+  .get(function(req, res){
+  	Avaliacao.find({matProf: req.params.matProf_q}, function(err, avs){
+  		if (err)
+  		  res.status(400).json({message: err.message});
+      else
+  		  res.status(200).json(avs);
+  	});
+  });
 
-avaliacao_route.route("/aluno/:dreAluno_q")
-.get(function(req, res){
-	Avaliacao.find({dreAluno: req.params.dreAluno_q}, function(err, avs){
-		if (err)
-		  res.status(400).json({message: err.message});
-    else
-		  res.status(200).json(avs);
-	});
+  /**
+  *  Lista todas as avaliacoes feitas pelo Aluno especificado
+  *  .../api/avaliacao/aluno/:dre
+  */
+  avaliacao_route.route("/aluno/:dreAluno_q")
+  .get(function(req, res){
+  	Avaliacao.find({dreAluno: req.params.dreAluno_q}, function(err, avs){
+  		if (err)
+  		  res.status(400).json({message: err.message});
+      else
+  		  res.status(200).json(avs);
+  	});
 });
 
 
