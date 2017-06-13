@@ -1,37 +1,47 @@
 var cursa_route = require('express').Router({mergeParams: true});
 var Cursa = require("./cursa").cursa;
 
-// Rota: http://localhost:8080/api/cursa
 cursa_route.route('/')
+	.post(function(req, res) {
 
-	// // criar cursa (accessed at POST http://localhost:8080/api/cursa)
-	// .post(function(req, res) {
-  //
-	// 	var cursa = new Cursa();		// create a new instance of the model
-	// 	cursa.nome = req.body.nome;  // set dre (comes from the request)
-  //
-	// 	cursa.save(function(err) {
-	// 		if (err)
-	// 			res.send(err);
-  //
-	// 		res.json({ message: 'Cursa criada' });
-	// 	});
-  //
-  //
-	// })
+		var cursa = new Cursa();
+		cursa.dreAluno = req.body.dreAluno;
+		cursa.nome = req.body.nome;
 
-	// Ver todos os cursas (accessed at GET http://localhost:8080/api/cursa)
-	.get(function(req, res) {
-		Cursa.find(function(err, avs) {
+		cursa.save(function(err) {
 			if (err)
 				res.send(err);
+            else {
+                res.json({message: 'Sucesso'});
+            }
+		});
+	})
 
-			res.json(avs);
+	// Ver todos alunos-disciplina
+ 	.get(function(req, res) {
+		Cursa.find(function(err, lista) {
+			if (err)
+				res.send(err);
+            else {
+                res.json(lista);
+            }
 		});
 	});
 
-// on routes that end in /cursa/:id_cursa
-// ----------------------------------------------------
+/**
+ * Consultar matérias cursadas pelo DRE Aluno
+ */
+cursa_route.route('/aluno/:dre_aluno')
+	.get(function(req, res) {
+		Cursa.find({dreAluno: req.params.dre_aluno}, function(err, cursa) {
+			if (err)
+				res.send(err);
+			else {
+                res.json(cursa);
+            }
+		});
+	});
+
 // cursa_route.route('/:id_cursa')
 //
 // 	// consulta cursa pelo id

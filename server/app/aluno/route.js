@@ -14,8 +14,9 @@ aluno_route.route('/')
 		aluno.save(function(err) {
 			if (err)
 				res.send(err);
-
-			res.json({ message: 'Aluno criada' });
+			else {
+                res.json({message: 'Aluno criada'});
+            }
 		});
 	})
 
@@ -24,35 +25,36 @@ aluno_route.route('/')
 		Aluno.find(function(err, avs) {
 			if (err)
 				res.send(err);
-
-			res.json(avs);
+			else {
+                res.json(avs);
+            }
 		});
 	});
 
-// on routes that end in /aluno/:dre
-// ----------------------------------------------------
 aluno_route.route('/:dre')
 
 	// consulta aluno pelo id
 	.get(function(req, res) {
-		Aluno.findById(req.params.dre, function(err, aluno) {
+		Aluno.find({dre: req.params.dre}, function(err, aluno) {
 			if (err)
 				res.send(err);
-			res.json(aluno);
+			else {
+                res.json(aluno);
+            }
 		});
 	})
 
 	// deleta aluno com id
 	.delete(function(req, res) {
 		Aluno.remove({
-			_id: req.params.dre
-		}, function(err, av) {
+			dre: req.params.dre
+		}, function(err) {
 			if (err)
 				res.send(err);
-
-			res.json({ message: 'Successfully deleted' });
+			else {
+                res.json({message: 'Successfully deleted'});
+            }
 		});
 	});
-
 
 module.exports.aluno_route = aluno_route;

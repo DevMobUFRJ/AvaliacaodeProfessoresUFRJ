@@ -2,7 +2,7 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var AtributoSchema   = new Schema({
-	_id: Number,
+	id: Number,
 	nome: String,
 });
 

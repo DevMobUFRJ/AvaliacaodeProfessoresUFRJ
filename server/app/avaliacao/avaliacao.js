@@ -9,7 +9,12 @@ var AvaliacaoSchema   = new Schema({
 	data: { type: Date, default: Date.now },
 	dataAlteracao: { type: Date, default: Date.now },
 	visivel: { type: Boolean, default: true },
-	atributos: [{ type: Number, ref: 'Atributo', default: undefined }]
+
+	//TODO Resolver esta confusão de atributos e tags.
+	atributos: [{
+		idAtributo: { type: Number, ref: 'Atributo'},
+		valor: { type: Number, max: 1, min: -1}
+	}]		// Array de inteiros com IDs dos atributos
 });
 
 module.exports.avaliacao = mongoose.model('Avaliacao', AvaliacaoSchema);

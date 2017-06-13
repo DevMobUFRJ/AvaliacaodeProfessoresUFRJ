@@ -15,18 +15,20 @@ docente_route.route('/')
 		docente.save(function(err) {
 			if (err)
 				res.send(err);
-
-			res.json({ message: 'Docente criada' });
+            else {
+                res.json({message: 'Docente criada'});
+            }
 		});
 	})
 
 	// Ver todos os docentes (accessed at GET http://localhost:8080/api/docente)
 	.get(function(req, res) {
-		Docente.find(function(err, avs) {
+		Docente.find(function(err, lista) {
 			if (err)
 				res.send(err);
-
-			res.json(avs);
+            else {
+                res.json(lista);
+            }
 		});
 	});
 
@@ -47,7 +49,6 @@ docente_route.route('/:mat_docente')
 	// update docente com id
 	.put(function(req, res) {
 		Docente.find({matricula: req.params.mat_docente}, function(err, docente) {
-
 			if (err)
 				res.send(err);
 			else {
@@ -64,13 +65,13 @@ docente_route.route('/:mat_docente')
 
 	// deleta docente com id
 	.delete(function(req, res) {
-		Docente.remove({matricula: req.params.mat_docente}, function(err, av) {
+		Docente.remove({matricula: req.params.mat_docente}, function(err) {
 			if (err)
 				res.send(err);
-
-			res.json({ message: 'Successfully deleted' });
+            else {
+                res.json({message: 'Successfully deleted'});
+            }
 		});
 	});
-
 
 module.exports.docente_route = docente_route;

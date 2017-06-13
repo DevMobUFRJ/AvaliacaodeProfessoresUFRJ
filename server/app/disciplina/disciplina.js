@@ -4,6 +4,7 @@ var Schema       = mongoose.Schema;
 //TODO change attributes
 var DisciplinaSchema   = new Schema({
 	_id: { type: Schema.Types.ObjectId, default: new mongoose.Types.ObjectId },
+	codigo: { type: String, required: true},
 	nome: String
 });
 
