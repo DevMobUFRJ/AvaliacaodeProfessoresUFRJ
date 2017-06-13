@@ -13,7 +13,7 @@ avaliacao_route.route('/')
 	av.matProf = req.body.matProf;
 	av.comentario = req.body.comentario;
 	av.nota = req.body.nota;
-  if(req.body.tags) av.tags = req.body.tags.split(',');
+  if(req.body.tags) av.atributo = req.body.tags;
 
 	// VALIDAR COMENTÁRIO !!!!!!!!!
 	// if (!comentarioValido(av.comentario)) { av.visivel = 0 ;}

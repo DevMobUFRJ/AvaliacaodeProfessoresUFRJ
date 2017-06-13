@@ -1,0 +1,9 @@
+{
+  "atributo"": [
+    {"id": 1, "nome": "Didática" },
+    {"id": 2, "nome": "Material"},
+    {"id": 3, "nome": "Paciência"},
+    {"id": 4, "nome": "Organização"},
+    {"id": 5, "nome": "Compreensão"}
+  ]
+}

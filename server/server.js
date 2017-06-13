@@ -16,6 +16,8 @@ var mongourl = process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://node:node@loca
 
 // Rotas do Express (Requests HTTP)
 var avaliacao_route = require('./app/avaliacao').avaliacao_route;
+var disciplinaPeriodo_route = require('./app/disciplinaPeriodo').disciplinaPeriodo_route;
+var atributo_route = require('./app/atributo').atributo_route;
 
 var mongoose   = require('mongoose');
 mongoose.connect(mongourl); // connect to our database
@@ -43,6 +45,8 @@ router.use(function(req, res, next) {
 // ----------------------------------------------------
 // on routes that end in /api/avaliacao
 router.use("/avaliacao", avaliacao_route);
+router.use("/disciplinaPeriodo", disciplinaPeriodo_route);
+router.use("/atributo", atributo_route);
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
@@ -56,5 +60,4 @@ app.use('/api', router);
 // START THE SERVER
 // =============================================================================
 app.listen(port, server_ip_address, function(){
-	// Someting?
 });

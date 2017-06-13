@@ -1,9 +1,9 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
-var TagSchema   = new Schema({
+var AtributoSchema   = new Schema({
 	_id: Number,
 	nome: String,
 });
 
-module.exports.tag = mongoose.model('Tag', TagSchema);
+module.exports.atributo = mongoose.model('Atributo', AtributoSchema);
