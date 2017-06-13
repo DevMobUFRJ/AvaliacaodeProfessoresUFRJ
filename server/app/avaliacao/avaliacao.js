@@ -2,8 +2,8 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var AvaliacaoSchema   = new Schema({
-	dreAluno: { type: String, required: true },
-	idDisciplinaPeriodo: { type: String, required: true},
+	dreAluno: { type: String, required: true },								// Dois atributos da
+	idDisciplinaPeriodo: { type: Schema.Types.ObjectId, required: true},	//  tabela cursa.
 	comentario: { type: String, required: false, trim: true},
 	nota: { type: Number, required: true},
 	data: { type: Date, default: Date.now },

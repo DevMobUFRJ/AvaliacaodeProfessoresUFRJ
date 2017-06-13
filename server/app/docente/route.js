@@ -8,9 +8,9 @@ docente_route.route('/')
 	// criar docente (accessed at POST http://localhost:8080/api/docente)
 	.post(function(req, res) {
 
-		var docente = new Docente();		// create a new instance of the model
-		docente.matricula = req.body.matricula;  // set dre (comes from the request)
-		docente.nome = req.body.nome;  // set dre (comes from the request)
+		var docente = new Docente();
+		docente.matricula = req.body.matricula;
+		docente.nome = req.body.nome;
 
 		docente.save(function(err) {
 			if (err)
@@ -18,11 +18,9 @@ docente_route.route('/')
 
 			res.json({ message: 'Docente criada' });
 		});
-
-
 	})
 
-	// Ver todas as avaliacoes (accessed at GET http://localhost:8080/api/docente)
+	// Ver todos os docentes (accessed at GET http://localhost:8080/api/docente)
 	.get(function(req, res) {
 		Docente.find(function(err, avs) {
 			if (err)
@@ -34,41 +32,39 @@ docente_route.route('/')
 
 // on routes that end in /docente/:id_docente
 // ----------------------------------------------------
-docente_route.route('/:id_docente')
+docente_route.route('/:mat_docente')
 
-  //TODO trocar findById por find pela matricula
 	// consulta docente pelo id
 	.get(function(req, res) {
-		Docente.findById(req.params.id_docente, function(err, docente) {
+		Docente.find({matricula: req.params.mat_docente}, function(err, docente) {
 			if (err)
 				res.send(err);
-			res.json(docente);
+			else
+				res.json(docente);
 		});
 	})
 
 	// update docente com id
 	.put(function(req, res) {
-		Docente.findById(req.params.id_docente, function(err, docente) {
+		Docente.find({matricula: req.params.mat_docente}, function(err, docente) {
 
 			if (err)
 				res.send(err);
-
-			docente.nome = req.body.nome;
-			docente.save(function(err) {
-				if (err)
-					res.send(err);
-
-				res.json({ message: 'Docente atualizada!' });
-			});
-
+			else {
+                docente.nome = req.body.nome;
+                docente.save(function (err) {
+                    if (err)
+                        res.send(err);
+					else
+                    	res.json({message: 'Docente atualizada!'});
+                });
+            }
 		});
 	})
 
 	// deleta docente com id
 	.delete(function(req, res) {
-		Docente.remove({
-			_id: req.params.id_docente
-		}, function(err, av) {
+		Docente.remove({matricula: req.params.mat_docente}, function(err, av) {
 			if (err)
 				res.send(err);
 
