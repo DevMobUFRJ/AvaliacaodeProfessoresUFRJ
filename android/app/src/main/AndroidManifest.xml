@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.ufrj.dcc.devmob.avaliacaoprofessoresufrj">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,7 +32,7 @@
         </activity>
         <activity
             android:name=".MenuActivity"
-            android:label="@string/title_activity_tela_selecao"></activity>
+            android:label="@string/title_activity_tela_selecao"/>
     </application>
 
 </manifest>

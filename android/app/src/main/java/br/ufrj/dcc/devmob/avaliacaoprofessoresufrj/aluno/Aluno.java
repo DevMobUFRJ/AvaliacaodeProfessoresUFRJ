@@ -1,4 +1,4 @@
-package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Aluno;
+package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.aluno;
 
 /**
  * Created by devmob on 02/06/17.

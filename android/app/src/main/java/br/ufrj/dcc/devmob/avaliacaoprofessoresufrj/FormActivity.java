@@ -65,7 +65,7 @@ public class FormActivity extends Activity{
         final Toast[] toast = new Toast[1];
 
         //mAvaliacao.setMatProf(b.getString("MatProf"));
-        //mAvaliacao.setId(b.getString("CODDISC"));
+        //mAvaliacao.setCodigo(b.getString("CODDISC"));
 
         String NomeMat = getIntent().getStringExtra("Nome_Mat");
         txt_mat.setText(NomeMat);

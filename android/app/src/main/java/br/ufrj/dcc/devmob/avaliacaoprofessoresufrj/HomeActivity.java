@@ -9,11 +9,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
+import java.util.List;
+
+import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Disciplina.Disciplina;
+import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Disciplina.DisciplinaController;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeActivity extends Activity{
 
@@ -22,14 +30,9 @@ public class HomeActivity extends Activity{
     int click = 0;
 
     //itens que ficarão na tela
-    private String Itens[]={"Joao - Computacao","Mario Ricardo - Geo. Analitica",
-            "Geovana - História da Arte","Joao - Computacao","Mario Ricardo - Geo. Analitica",
-            "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica",
-            "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica",
-            "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica",
-            "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica",
-            "Geovana - História da Arte", "Joao - Computacao","Mario Ricardo - Geo. Analitica",
-            "Geovana - História da Arte"};
+    private static String Itens[]={"Aguarde"};
+
+    ArrayAdapter<String> adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class HomeActivity extends Activity{
 
         tela = (ListView) findViewById(R.id.LV_tela);
 
-        final ArrayAdapter<String> adaptador = new ArrayAdapter<String>(
+         adaptador = new ArrayAdapter<String>(
                 getApplicationContext(),
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1,
@@ -64,6 +67,23 @@ public class HomeActivity extends Activity{
             }
         });
 
+        DisciplinaController.listarDisciplinas().enqueue(new Callback<List<Disciplina>>() {
+            @Override
+            public void onResponse(Call<List<Disciplina>> call, Response<List<Disciplina>> response) {
+                Toast.makeText(HomeActivity.this, "Response", Toast.LENGTH_LONG).show();
+                final List<Disciplina> lista = response.body();
+                Itens = new String[lista.size()];
+                for(int i = 0; i < lista.size(); i++) {
+                    Itens[i] = lista.get(i).getcodigo() + " - " + lista.get(i).getNome();
+                }
+                ((BaseAdapter)tela.getAdapter()).notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<Disciplina>> call, Throwable t) {
+                Toast.makeText(HomeActivity.this, "Failure", Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 

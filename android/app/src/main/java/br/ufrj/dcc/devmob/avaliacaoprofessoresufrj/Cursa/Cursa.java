@@ -1,6 +1,6 @@
 package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Cursa;
 
-import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Aluno.Aluno;
+import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.aluno.Aluno;
 
 /**
  * Created by devmob on 02/06/17.

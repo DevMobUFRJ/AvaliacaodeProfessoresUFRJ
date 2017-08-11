@@ -6,22 +6,22 @@ package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Disciplina;
 
 public class Disciplina {
 
-    private String id;
+    private String codigo;
     private String nome;
 
     public Disciplina(){
-        id = "";
+        codigo = "";
         nome = "";
     }
 
     public Disciplina(String id, String nome){
-        this.id = id;
+        this.codigo = id;
         this.nome = nome;
     }
 
-    public String getId(){return id;}
+    public String getcodigo(){return codigo;}
 
-    public void setId(String id){this.id = id;}
+    public void setCodigo(String codigo){this.codigo = codigo;}
 
     public String getNome(){return nome;}
 
