@@ -73,12 +73,6 @@ public class HomeActivity extends Activity{
                 }
                 adaptador.clear();
                 adaptador.addAll(itens);
-                // Solução alternativa
-//                adaptador = new ArrayAdapter<String>(
-//                        getApplicationContext(),
-//                        android.R.layout.simple_list_item_1,
-//                        android.R.id.text1, itens);
-                //tela.setAdapter(adaptador);
             }
 
             @Override

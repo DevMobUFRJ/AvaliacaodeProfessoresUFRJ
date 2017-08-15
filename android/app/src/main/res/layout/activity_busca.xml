@@ -30,7 +30,7 @@
         />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_pesquisa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorBotao"
@@ -38,18 +38,20 @@
             android:textColor="@color/branco"
             tools:layout_editor_absoluteX="148dp"
             tools:layout_editor_absoluteY="85dp"
+            android:layout_marginTop="16dp"
             android:layout_below="@+id/editText"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="17dp" />
+            android:layout_centerHorizontal="true" />
 
     <ListView
+        android:id="@+id/LV_Busca"
         android:layout_width="378dp"
         android:layout_height="404dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
         tools:layout_editor_absoluteX="385dp"
         tools:layout_editor_absoluteY="147dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/listView" />
+        android:layout_below="@id/btn_pesquisa"
+        />
 
 
 </RelativeLayout>
