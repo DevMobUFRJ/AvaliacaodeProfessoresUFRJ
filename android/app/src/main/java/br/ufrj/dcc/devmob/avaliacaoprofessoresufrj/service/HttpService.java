@@ -11,6 +11,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * Created by devmob on 06/04/17.
@@ -44,4 +45,7 @@ public interface HttpService {
     @Headers({"Accept:application/json", "Cache-Control: max-age=640000"})
     @GET("disciplina")
     Call<List<Disciplina>> listarDisciplinas();
+
+    @GET("disciplina")
+    Call<List<Disciplina>> buscarDisciplina(@Query("q") String q);
 }

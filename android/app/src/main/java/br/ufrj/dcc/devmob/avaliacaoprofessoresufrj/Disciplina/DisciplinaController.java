@@ -2,6 +2,7 @@ package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Disciplina;
 
 import java.util.List;
 
+import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.avaliacao.Avaliacao;
 import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.service.HttpService;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -23,4 +24,16 @@ public class DisciplinaController {
         HttpService service = retrofit.create(HttpService.class);
         return service.listarDisciplinas();
     }
+
+    public static Call<List<Disciplina>> buscarDisciplina(String id)
+            throws java.io.IOException{
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(HttpService.baseURL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        HttpService service = retrofit.create(HttpService.class);
+        return service.buscarDisciplina(id);
+    }
+
 }

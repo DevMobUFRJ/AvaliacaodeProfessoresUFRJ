@@ -1,20 +1,15 @@
 package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +24,7 @@ public class Busca extends Activity implements View.OnClickListener {
     private ListView tela;
     ListView busca;
     Button pesquisa;
+    EditText text;
 
     private ArrayList<String> itens = new ArrayList<>();
     ArrayAdapter<String> adaptador;
@@ -40,6 +36,7 @@ public class Busca extends Activity implements View.OnClickListener {
 
         busca = (ListView) findViewById(R.id.LV_Busca);
         pesquisa = (Button) findViewById(R.id.btn_pesquisa);
+        text = (EditText) findViewById(R.id.text);
 
         itens.add("Aguarde");
 
@@ -65,7 +62,6 @@ public class Busca extends Activity implements View.OnClickListener {
                 adaptador.clear();
                 adaptador.addAll(itens);
             }
-
             @Override
             public void onFailure(Call<List<Disciplina>> call, Throwable t) {
                 Toast.makeText(Busca.this, "Failure", Toast.LENGTH_LONG).show();
@@ -73,13 +69,31 @@ public class Busca extends Activity implements View.OnClickListener {
         });
 
     }
-
     public void onClick (View view) {
         switch (view.getId()){
             case R.id.btn_pesquisa:
+                String texto = text.getText().toString();
+                try {
+                    DisciplinaController.buscarDisciplina(texto).enqueue(new Callback<List<Disciplina>>() {
+                        @Override
+                        public void onResponse(Call<List<Disciplina>> call, Response<List<Disciplina>> response) {
+                            Toast.makeText(Busca.this, "Response", Toast.LENGTH_LONG).show();
+                            final List<Disciplina> lista = response.body();
+                            itens = new ArrayList<>();
+                            for (int i = 0; i < lista.size(); i++) {
+                                itens.add(lista.get(i).getcodigo() + " - " + lista.get(i).getNome());
+                            }
+                            adaptador.clear();
+                            adaptador.addAll(itens);
+                        }
 
-
-                break;
+                        @Override
+                        public void onFailure(Call<List<Disciplina>> call, Throwable t) {
+                            Toast.makeText(Busca.this, "Failure", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }catch (IOException e){
+                }
         }
 
     }
