@@ -9,4 +9,7 @@
     <color name="fundo">#3faadf</color>
     <color name="colorBotao">#295c81</color>
     <color name="branco">#ffff</color>
+    <color name="positiva">#388E3C</color>
+    <color name="negativa">#E53935</color>
+    <color name="neutra">#BDBDBD</color>
 </resources>

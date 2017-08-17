@@ -77,7 +77,7 @@ public class Busca extends Activity implements View.OnClickListener {
                     DisciplinaController.buscarDisciplina(texto).enqueue(new Callback<List<Disciplina>>() {
                         @Override
                         public void onResponse(Call<List<Disciplina>> call, Response<List<Disciplina>> response) {
-                            Toast.makeText(Busca.this, "Response", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Busca.this, "Response", Toast.LENGTH_SHORT).show();
                             final List<Disciplina> lista = response.body();
                             itens = new ArrayList<>();
                             for (int i = 0; i < lista.size(); i++) {
@@ -89,7 +89,7 @@ public class Busca extends Activity implements View.OnClickListener {
 
                         @Override
                         public void onFailure(Call<List<Disciplina>> call, Throwable t) {
-                            Toast.makeText(Busca.this, "Failure", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Busca.this, "Failure", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }catch (IOException e){

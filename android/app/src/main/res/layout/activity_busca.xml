@@ -24,9 +24,6 @@
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="85dp"
         tools:layout_editor_absoluteY="28dp"
-        android:textColorHighlight="@color/black"
-        android:textColorLink="@color/black"
-
         />
 
         <Button
