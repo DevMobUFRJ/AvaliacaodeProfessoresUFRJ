@@ -3,6 +3,7 @@ package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.service;
 import java.util.List;
 
 import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Disciplina.Disciplina;
+import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Docente.Docente;
 import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.avaliacao.Avaliacao;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -48,4 +49,7 @@ public interface HttpService {
 
     @GET("disciplina")
     Call<List<Disciplina>> buscarDisciplina(@Query("q") String q);
+
+    @GET("docente")
+    Call<List<Docente>> buscarDocente(@Query("q") String q);
 }

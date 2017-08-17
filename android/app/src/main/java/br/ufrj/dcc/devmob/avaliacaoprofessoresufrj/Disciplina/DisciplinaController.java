@@ -1,7 +1,6 @@
 package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Disciplina;
 
 import java.util.List;
-
 import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.avaliacao.Avaliacao;
 import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.service.HttpService;
 import retrofit2.Call;

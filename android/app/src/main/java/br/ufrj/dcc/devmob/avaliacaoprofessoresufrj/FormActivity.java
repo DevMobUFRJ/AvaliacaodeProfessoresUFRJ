@@ -236,9 +236,6 @@ public class FormActivity extends Activity{
         });
 
     }
-
-
-
     public void mostraValor()
     {
         rtg_1 = (RatingBar) findViewById(R.id.ratingBar);
