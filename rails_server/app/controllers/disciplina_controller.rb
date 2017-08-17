@@ -3,7 +3,12 @@ class DisciplinaController < ApplicationController
 
   # GET /disciplina
   def index
-    @disciplinas = Disciplina.all
+    if params[:q]
+      @query = params[:q].first
+      @disciplinas = Disciplina.where('codigo = ? OR nome = ?', @query, @query)
+    else
+      @disciplinas = Disciplina.all
+    end
     json_response(@disciplinas)
   end
 
