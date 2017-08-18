@@ -10,6 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Busca"
     android:background="@color/CorFundo"
+    android:focusableInTouchMode="true"
     >
 
 

@@ -1,8 +1,10 @@
 package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,7 +43,6 @@ public class Busca extends Activity implements View.OnClickListener {
         pesquisa = (Button) findViewById(R.id.btn_pesquisa);
         text = (EditText) findViewById(R.id.text);
 
-        itens.add("");
         tela = (ListView) findViewById(R.id.LV_tela);
 
         adaptador = new ArrayAdapter<String>(
@@ -74,6 +75,7 @@ public class Busca extends Activity implements View.OnClickListener {
     public void onClick (View view) {
         switch (view.getId()){
             case R.id.btn_pesquisa:
+                hideSoftKeyboard(Busca.this, view);
                 findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
                 String texto = text.getText().toString();
                 try {
@@ -104,7 +106,7 @@ public class Busca extends Activity implements View.OnClickListener {
                     DocenteController.buscarDocente(texto).enqueue(new Callback<List<Docente>>() {
                         @Override
                         public void onResponse(Call<List<Docente>> call, Response<List<Docente>> response) {
-                            Toast.makeText(Busca.this, "Achou Docente", Toast.LENGTH_SHORT).show();
+                           //Toast.makeText(Busca.this, "Achou Docente", Toast.LENGTH_SHORT).show();
                             final List<Docente> lista = response.body();
                             itens = new ArrayList<>();
                             for (int i = 0; i < lista.size(); i++) {
@@ -124,5 +126,9 @@ public class Busca extends Activity implements View.OnClickListener {
 
         }
 
+    }
+    public static void hideSoftKeyboard (Activity activity, View view) {
+        InputMethodManager imm = (InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getApplicationWindowToken(), 0);
     }
 }
