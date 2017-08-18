@@ -21,13 +21,19 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:hint="Matéria/Professor"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="28dp"
-        />
+        tools:layout_editor_absoluteY="28dp" />
 
-        <Button
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_centerHorizontal="true"
+        android:spinnerMode="dropdown" />
+
+    <Button
             android:id="@+id/btn_pesquisa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,32 +41,33 @@
             android:text="Buscar"
             android:textColor="@color/branco"
             tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="85dp"
+            tools:layout_editor_absoluteY="95dp"
             android:layout_marginTop="16dp"
-            android:layout_below="@+id/text"
+            android:layout_below="@+id/spinner"
             android:layout_centerHorizontal="true" />
 
     <ListView
         android:id="@+id/LV_Busca"
         android:layout_width="378dp"
-        android:layout_height="404dp"
+        android:layout_height="380dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         tools:layout_editor_absoluteX="385dp"
-        tools:layout_editor_absoluteY="147dp"
-        android:layout_below="@id/btn_pesquisa"
-        />
+        tools:layout_editor_absoluteY="147dp" />
 
     <RelativeLayout
         android:id="@+id/loadingPanel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center" >
+        android:gravity="center"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/LV_Busca">
 
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminate="true" />
+            android:indeterminate="true"
+            />
     </RelativeLayout>
 
 

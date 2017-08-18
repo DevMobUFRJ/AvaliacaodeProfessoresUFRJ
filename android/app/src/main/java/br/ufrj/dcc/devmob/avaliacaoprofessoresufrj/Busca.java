@@ -5,10 +5,12 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -26,12 +28,14 @@ import retrofit2.Response;
 public class Busca extends Activity implements View.OnClickListener {
 
     private ListView tela;
+    Spinner dropdown;
     ListView busca;
     Button pesquisa;
     EditText text;
 
     private ArrayList<String> itens = new ArrayList<>();
     ArrayAdapter<String> adaptador;
+    ArrayAdapter<String> adapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,40 +43,25 @@ public class Busca extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_busca);
 
         findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+        dropdown = (Spinner) findViewById(R.id.spinner);
         busca = (ListView) findViewById(R.id.LV_Busca);
         pesquisa = (Button) findViewById(R.id.btn_pesquisa);
         text = (EditText) findViewById(R.id.text);
 
-
+        String[] escolha = new String[]{"Matéria", "Professor"};
         tela = (ListView) findViewById(R.id.LV_tela);
+
+        adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, escolha);
+        dropdown.setAdapter(adapter2);
 
         adaptador = new ArrayAdapter<String>(
                 getApplicationContext(),
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1, itens);
-
         busca.setAdapter(adaptador);
+
         pesquisa.setOnClickListener(this);
         itens.add("");
-
-//        DisciplinaController.listarDisciplinas().enqueue(new Callback<List<Disciplina>>() {
-//            @Override
-//            public void onResponse(Call<List<Disciplina>> call, Response<List<Disciplina>> response) {
-//                Toast.makeText(Busca.this, "Response", Toast.LENGTH_LONG).show();
-//                final List<Disciplina> lista = response.body();
-//                itens = new ArrayList<>();
-//                for(int i = 0; i < lista.size(); i++) {
-//                    itens.add(lista.get(i).getcodigo() + " - " + lista.get(i).getNome());
-//                }
-//                adaptador.clear();
-//                adaptador.addAll(itens);
-//            }
-//            @Override
-//            public void onFailure(Call<List<Disciplina>> call, Throwable t) {
-//                Toast.makeText(Busca.this, "Failure", Toast.LENGTH_LONG).show();
-//            }
-//        });
-
     }
     public void onClick (View view) {
         switch (view.getId()){
@@ -81,6 +70,16 @@ public class Busca extends Activity implements View.OnClickListener {
                 adaptador.clear();
                 findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
                 String texto = text.getText().toString();
+                dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
                 try {
                     DisciplinaController.buscarDisciplina(texto).enqueue(new Callback<List<Disciplina>>() {
                         @Override
