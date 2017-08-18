@@ -43,6 +43,7 @@ public class Busca extends Activity implements View.OnClickListener {
         pesquisa = (Button) findViewById(R.id.btn_pesquisa);
         text = (EditText) findViewById(R.id.text);
 
+
         tela = (ListView) findViewById(R.id.LV_tela);
 
         adaptador = new ArrayAdapter<String>(
@@ -52,6 +53,7 @@ public class Busca extends Activity implements View.OnClickListener {
 
         busca.setAdapter(adaptador);
         pesquisa.setOnClickListener(this);
+        itens.add("");
 
 //        DisciplinaController.listarDisciplinas().enqueue(new Callback<List<Disciplina>>() {
 //            @Override
@@ -76,6 +78,7 @@ public class Busca extends Activity implements View.OnClickListener {
         switch (view.getId()){
             case R.id.btn_pesquisa:
                 hideSoftKeyboard(Busca.this, view);
+                adaptador.clear();
                 findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
                 String texto = text.getText().toString();
                 try {
@@ -89,7 +92,6 @@ public class Busca extends Activity implements View.OnClickListener {
                                 itens.add(lista.get(i).getcodigo() + " - " + lista.get(i).getNome());
                             }
                             findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-                            adaptador.clear();
                             adaptador.addAll(itens);
                         }
 
@@ -113,7 +115,6 @@ public class Busca extends Activity implements View.OnClickListener {
                                 itens.add(lista.get(i).getNome());
                             }
                             findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-                            adaptador.clear();
                             adaptador.addAll(itens);
                         }
 

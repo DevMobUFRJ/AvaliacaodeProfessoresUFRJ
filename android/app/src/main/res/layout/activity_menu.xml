@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_centerHorizontal="true"
-            android:text="Pesquisar Professores"
+            android:text="Pesquisar"
             android:layout_below="@+id/btn_avaliacoes"
             android:backgroundTint="@color/colorBotao"
             android:textColor="@color/branco"
