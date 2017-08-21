@@ -3,6 +3,9 @@ package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -25,13 +28,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Busca extends Activity implements View.OnClickListener {
+public class Busca extends AppCompatActivity implements View.OnClickListener {
 
     private ListView tela;
     Spinner dropdown;
     ListView busca;
     Button pesquisa;
     EditText text;
+
 
     private ArrayList<String> itens = new ArrayList<>();
     ArrayAdapter<String> adaptador;
@@ -41,6 +45,11 @@ public class Busca extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busca);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
 
         findViewById(R.id.loadingPanel).setVisibility(View.GONE);
         dropdown = (Spinner) findViewById(R.id.spinner);
@@ -61,7 +70,6 @@ public class Busca extends Activity implements View.OnClickListener {
         busca.setAdapter(adaptador);
 
         pesquisa.setOnClickListener(this);
-        itens.add("");
     }
     public void onClick (View view) {
         switch (view.getId()){
@@ -70,62 +78,51 @@ public class Busca extends Activity implements View.OnClickListener {
                 adaptador.clear();
                 findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
                 String texto = text.getText().toString();
-                dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                    }
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                    }
-                });
-                try {
-                    DisciplinaController.buscarDisciplina(texto).enqueue(new Callback<List<Disciplina>>() {
-                        @Override
-                        public void onResponse(Call<List<Disciplina>> call, Response<List<Disciplina>> response) {
-                           //Toast.makeText(Busca.this, "Achou Disciplina", Toast.LENGTH_SHORT).show();
-                            final List<Disciplina> lista = response.body();
-                            itens = new ArrayList<>();
-                            for (int i = 0; i < lista.size(); i++) {
-                                itens.add(lista.get(i).getcodigo() + " - " + lista.get(i).getNome());
+                if(dropdown.getSelectedItem().toString().equals("Matéria")){
+                    try {
+                        DisciplinaController.buscarDisciplina(texto).enqueue(new Callback<List<Disciplina>>() {
+                            @Override
+                            public void onResponse(Call<List<Disciplina>> call, Response<List<Disciplina>> response) {
+                                //Toast.makeText(Busca.this, "Achou Disciplina", Toast.LENGTH_SHORT).show();
+                                final List<Disciplina> lista = response.body();
+                                itens = new ArrayList<>();
+                                for (int i = 0; i < lista.size(); i++) {
+                                    itens.add(lista.get(i).getcodigo() + " - " + lista.get(i).getNome());
+                                }
+                                findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+                                adaptador.addAll(itens);
                             }
-                            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-                            adaptador.addAll(itens);
-                        }
 
-                        @Override
-                        public void onFailure(Call<List<Disciplina>> call, Throwable t) {
-                            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-                            Toast.makeText(Busca.this, "Error", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }catch (IOException e){
+                            @Override
+                            public void onFailure(Call<List<Disciplina>> call, Throwable t) {
+                                findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+                                Toast.makeText(Busca.this, "Error", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }catch (IOException e){}
 
+                }else if(dropdown.getSelectedItem().toString().equals("Professor")) {
+//                    DocenteController.buscarDocente(texto).enqueue(new Callback<List<Docente>>() {
+//                        @Override
+//                        public void onResponse(Call<List<Docente>> call, Response<List<Docente>> response) {
+//                           //Toast.makeText(Busca.this, "Achou Docente", Toast.LENGTH_SHORT).show();
+//                            final List<Docente> lista = response.body();
+//                            itens = new ArrayList<>();
+//                            for (int i = 0; i < lista.size(); i++) {
+//                                itens.add(lista.get(i).getNome());
+//                            }
+//                            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+//                            adaptador.addAll(itens);
+//                        }
+//
+//                        @Override
+//                        public void onFailure(Call<List<Docente>> call, Throwable t) {
+//                            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+//                            Toast.makeText(Busca.this, "Error", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
                 }
-
-                    DocenteController.buscarDocente(texto).enqueue(new Callback<List<Docente>>() {
-                        @Override
-                        public void onResponse(Call<List<Docente>> call, Response<List<Docente>> response) {
-                           //Toast.makeText(Busca.this, "Achou Docente", Toast.LENGTH_SHORT).show();
-                            final List<Docente> lista = response.body();
-                            itens = new ArrayList<>();
-                            for (int i = 0; i < lista.size(); i++) {
-                                itens.add(lista.get(i).getNome());
-                            }
-                            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-                            adaptador.addAll(itens);
-                        }
-
-                        @Override
-                        public void onFailure(Call<List<Docente>> call, Throwable t) {
-                            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-                            Toast.makeText(Busca.this, "Error", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-
         }
-
     }
     public static void hideSoftKeyboard (Activity activity, View view) {
         InputMethodManager imm = (InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);

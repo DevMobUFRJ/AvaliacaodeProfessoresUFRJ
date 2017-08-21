@@ -1,37 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_form1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Busca"
     android:background="@color/CorFundo"
-    android:focusableInTouchMode="true"
-    >
+    android:focusableInTouchMode="true">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:theme="@style/ToolBarStyle"
+        android:backgroundTint="@color/colorPrimary"
+        />
 
     <EditText
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="28dp" />
+        tools:layout_editor_absoluteY="28dp"
+        android:layout_above="@+id/spinner"
+        android:layout_centerHorizontal="true"/>
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text"
-        android:layout_centerHorizontal="true"
-        android:spinnerMode="dropdown" />
+        android:spinnerMode="dropdown"
+        android:layout_above="@+id/btn_pesquisa"
+        android:layout_centerHorizontal="true" />
 
     <Button
             android:id="@+id/btn_pesquisa"
@@ -42,18 +47,20 @@
             android:textColor="@color/branco"
             tools:layout_editor_absoluteX="148dp"
             tools:layout_editor_absoluteY="95dp"
-            android:layout_marginTop="16dp"
-            android:layout_below="@+id/spinner"
-            android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/LV_Busca"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp" />
 
     <ListView
         android:id="@+id/LV_Busca"
         android:layout_width="378dp"
-        android:layout_height="380dp"
+        android:layout_height="360dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         tools:layout_editor_absoluteX="385dp"
-        tools:layout_editor_absoluteY="147dp" />
+        tools:layout_editor_absoluteY="147dp"
+        android:focusableInTouchMode="false"
+        android:isScrollContainer="false" />
 
     <RelativeLayout
         android:id="@+id/loadingPanel"
