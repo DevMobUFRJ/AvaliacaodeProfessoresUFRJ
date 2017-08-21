@@ -102,25 +102,25 @@ public class Busca extends AppCompatActivity implements View.OnClickListener {
                     }catch (IOException e){}
 
                 }else if(dropdown.getSelectedItem().toString().equals("Professor")) {
-//                    DocenteController.buscarDocente(texto).enqueue(new Callback<List<Docente>>() {
-//                        @Override
-//                        public void onResponse(Call<List<Docente>> call, Response<List<Docente>> response) {
-//                           //Toast.makeText(Busca.this, "Achou Docente", Toast.LENGTH_SHORT).show();
-//                            final List<Docente> lista = response.body();
-//                            itens = new ArrayList<>();
-//                            for (int i = 0; i < lista.size(); i++) {
-//                                itens.add(lista.get(i).getNome());
-//                            }
-//                            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-//                            adaptador.addAll(itens);
-//                        }
-//
-//                        @Override
-//                        public void onFailure(Call<List<Docente>> call, Throwable t) {
-//                            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-//                            Toast.makeText(Busca.this, "Error", Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
+                    DocenteController.buscarDocente(texto).enqueue(new Callback<List<Docente>>() {
+                        @Override
+                        public void onResponse(Call<List<Docente>> call, Response<List<Docente>> response) {
+                           //Toast.makeText(Busca.this, "Achou Docente", Toast.LENGTH_SHORT).show();
+                            final List<Docente> lista = response.body();
+                            itens = new ArrayList<>();
+                            for (int i = 0; i < lista.size(); i++) {
+                                itens.add(lista.get(i).getNome());
+                            }
+                            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+                            adaptador.addAll(itens);
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<Docente>> call, Throwable t) {
+                            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+                            Toast.makeText(Busca.this, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
         }
     }
