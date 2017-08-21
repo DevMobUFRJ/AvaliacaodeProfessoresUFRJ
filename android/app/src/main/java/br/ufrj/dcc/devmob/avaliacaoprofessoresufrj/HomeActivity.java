@@ -43,7 +43,6 @@ public class HomeActivity extends AppCompatActivity{
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-        itens.add("");
         tela = (ListView) findViewById(R.id.LV_tela);
         findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
          adaptador = new ArrayAdapter<String>(

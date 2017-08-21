@@ -19,11 +19,14 @@
             android:name=".HomeActivity"
             android:label="Avaliações Disponíveis"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MenuActivity">
             </activity>
         <activity android:name=".FormActivity" />
         <activity
             android:name=".Busca"
+            android:label="Pesquisar"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MenuActivity"
             />
         <activity
             android:name=".SplashScreen"
@@ -35,7 +38,8 @@
         </activity>
         <activity
             android:name=".MenuActivity"
-            android:label="@string/title_activity_tela_selecao"/>
+            android:label="Avalia!"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
