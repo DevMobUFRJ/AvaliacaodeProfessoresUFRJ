@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Gabriel on 17/08/2017.
  */
 
-public class DocenteController  {
+public class DocenteController {
 
     public static Call<List<Docente>> buscarDocente(String dc) {
         Retrofit retrofit = new Retrofit.Builder()
