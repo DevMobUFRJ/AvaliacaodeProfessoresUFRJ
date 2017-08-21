@@ -70,16 +70,9 @@ public class Busca extends Activity implements View.OnClickListener {
                 adaptador.clear();
                 findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
                 String texto = text.getText().toString();
-                dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                    }
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                    }
-                });
+                if(dropdown.getSelectedItem().toString().equals("Matéria")){
+                    Toast.makeText(Busca.this, "Funfou o spinner", Toast.LENGTH_SHORT).show();
+                }
                 try {
                     DisciplinaController.buscarDisciplina(texto).enqueue(new Callback<List<Disciplina>>() {
                         @Override
