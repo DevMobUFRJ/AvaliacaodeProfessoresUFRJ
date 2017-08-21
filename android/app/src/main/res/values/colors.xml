@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#295c81</color>
-    <color name="colorPrimaryDark">#295c81</color>
+    <color name="colorPrimaryDark">#1a3a52</color>
     <color name="colorAccent">#212121</color>
     <color name="CorFundo">#f1f1f1</color>
     <color name="yellow">#FDD835</color>
