@@ -20,6 +20,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Button autorizar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         autorizar = (Button) findViewById(R.id.autorizarSiga);
