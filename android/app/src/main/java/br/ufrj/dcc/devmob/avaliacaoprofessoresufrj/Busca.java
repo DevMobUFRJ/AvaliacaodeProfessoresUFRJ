@@ -35,8 +35,6 @@ public class Busca extends AppCompatActivity implements View.OnClickListener {
     ListView busca;
     Button pesquisa;
     EditText text;
-
-
     private ArrayList<String> itens = new ArrayList<>();
     ArrayAdapter<String> adaptador;
     ArrayAdapter<String> adapter2;
@@ -68,7 +66,6 @@ public class Busca extends AppCompatActivity implements View.OnClickListener {
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1, itens);
         busca.setAdapter(adaptador);
-
         pesquisa.setOnClickListener(this);
     }
     public void onClick (View view) {
@@ -83,11 +80,14 @@ public class Busca extends AppCompatActivity implements View.OnClickListener {
                         DisciplinaController.buscarDisciplina(texto).enqueue(new Callback<List<Disciplina>>() {
                             @Override
                             public void onResponse(Call<List<Disciplina>> call, Response<List<Disciplina>> response) {
-                                //Toast.makeText(Busca.this, "Achou Disciplina", Toast.LENGTH_SHORT).show();
                                 final List<Disciplina> lista = response.body();
                                 itens = new ArrayList<>();
-                                for (int i = 0; i < lista.size(); i++) {
-                                    itens.add(lista.get(i).getcodigo() + " - " + lista.get(i).getNome());
+                                if(lista.size() <= 0){
+                                    Toast.makeText(Busca.this, "Busca não encontrou nada", Toast.LENGTH_SHORT).show();
+                                }else{
+                                     for (int i = 0; i < lista.size(); i++){
+                                        itens.add(lista.get(i).getcodigo() + " - " + lista.get(i).getNome());
+                                     }
                                 }
                                 findViewById(R.id.loadingPanel).setVisibility(View.GONE);
                                 adaptador.addAll(itens);
@@ -105,11 +105,14 @@ public class Busca extends AppCompatActivity implements View.OnClickListener {
                     DocenteController.buscarDocente(texto).enqueue(new Callback<List<Docente>>() {
                         @Override
                         public void onResponse(Call<List<Docente>> call, Response<List<Docente>> response) {
-                           //Toast.makeText(Busca.this, "Achou Docente", Toast.LENGTH_SHORT).show();
                             final List<Docente> lista = response.body();
                             itens = new ArrayList<>();
-                            for (int i = 0; i < lista.size(); i++) {
-                                itens.add(lista.get(i).getNome());
+                            if(lista.size() <= 0){
+                                Toast.makeText(Busca.this, "Busca não encontrou nada", Toast.LENGTH_SHORT).show();
+                            }else{
+                                for (int i = 0; i < lista.size(); i++) {
+                                    itens.add(lista.get(i).getNome());
+                                }
                             }
                             findViewById(R.id.loadingPanel).setVisibility(View.GONE);
                             adaptador.addAll(itens);
