@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/CorFundo">
-
-        <Button
-            android:id="@+id/autorizarSiga"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:backgroundTint="@color/colorBotao"
-            android:text="Autorizar com SIGA"
-            android:textColor="#ffffffff" />
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/CorFundo">
 
         <ImageView
             android:layout_marginBottom="47dp"
             android:id="@+id/imageView"
             android:background="@drawable/oii"
-            android:layout_above="@+id/autorizarSiga"
-            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/cadastrar"
             android:layout_width="100dp"
             android:layout_height="140dp" />
-    </RelativeLayout>
+
+        <Button
+            android:id="@+id/autorizarSiga"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorBotao"
+            android:text="Login"
+            android:layout_marginBottom="15dp"
+            android:textColor="#ffffffff" />
+
+        <Button
+            android:id="@+id/signup"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorBotao"
+            android:layout_marginBottom="15dp"
+            android:text="Cadastro"
+            android:textColor="#ffffffff" />
 </LinearLayout>

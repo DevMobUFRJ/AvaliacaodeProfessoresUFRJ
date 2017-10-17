@@ -4,7 +4,9 @@ import java.util.List;
 
 import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Disciplina.Disciplina;
 import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Docente.Docente;
+import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.aluno.Aluno;
 import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.avaliacao.Avaliacao;
+import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.curso.Curso;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -20,7 +22,7 @@ import retrofit2.http.Query;
 
 public interface HttpService {
 
-    public static String baseURL = "https://stormy-lake-48687.herokuapp.com/";
+    String baseURL = "https://stormy-lake-48687.herokuapp.com/";
 
     @Headers({"Accept:application/json", "Cache-Control: max-age=640000"})
     @GET("avaliacao/aluno/{dre}")
@@ -47,9 +49,20 @@ public interface HttpService {
     @GET("disciplina")
     Call<List<Disciplina>> listarDisciplinas();
 
+    @Headers({"Accept:application/json", "Cache-Control: max-age=640000"})
+    @GET("curso")
+    Call<List<Curso>> listarCursos();
+
     @GET("disciplina")
     Call<List<Disciplina>> buscarDisciplina(@Query("q") String q);
 
     @GET("docente")
     Call<List<Docente>> buscarDocente(@Query("q") String q);
+
+    @FormUrlEncoded
+    @POST("aluno")
+    Call<Aluno> cadastrarAluno(
+            @Field("dre") String dre,
+            @Field("nome") String nome,
+            @Field("curso_id") int curso_id );
 }

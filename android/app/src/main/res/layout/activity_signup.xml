@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/signup_dre"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
+        android:hint="DRE" />
+
+
+    <EditText
+        android:id="@+id/signup_nome"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
+        android:hint="Nome Completo" />
+
+    <Spinner
+        android:id="@+id/signup_curso_id"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/signup_finish"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/branco"
+        android:text="Cadastrar" />
+</LinearLayout>

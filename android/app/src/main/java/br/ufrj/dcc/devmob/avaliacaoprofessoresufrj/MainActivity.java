@@ -17,15 +17,21 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by georgerappel on 03/10/16.
  */
 public class MainActivity extends Activity implements View.OnClickListener {
+
     Button autorizar;
+    Button signup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         autorizar = (Button) findViewById(R.id.autorizarSiga);
         autorizar.setOnClickListener(this);
+
+        signup = (Button) findViewById(R.id.signup);
+        signup.setOnClickListener(this);
     }
 
     @Override
@@ -37,6 +43,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(i);
                 finish();
                 break;
+            case R.id.signup:
+                Intent iSignup = new Intent(this, SignUpActivity.class);
+                startActivity(iSignup);
+                finish();
             default:
                 break;
         }

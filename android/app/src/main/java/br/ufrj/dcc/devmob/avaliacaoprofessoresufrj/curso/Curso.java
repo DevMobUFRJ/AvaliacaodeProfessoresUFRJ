@@ -21,4 +21,12 @@ public class Curso {
         this.nome = nome;
         this.departamento_id = departamento_id;
     }
+
+    public int getId(){
+        return id;
+    }
+
+    public String getNome(){
+        return nome;
+    }
 }
