@@ -8,26 +8,27 @@ public class Disciplina {
 
     private String codigo;
     private String nome;
+    private int curso_id;
 
-    public Disciplina(){
+    public Disciplina() {
         codigo = "";
         nome = "";
+        curso_id = 0;
     }
 
-    public Disciplina(String id, String nome){
+    public Disciplina(String id, String nome, int curso_id) {
         this.codigo = id;
         this.nome = nome;
+        this.curso_id = curso_id;
     }
 
-    public String getcodigo(){return codigo;}
+    public String getcodigo() {
+        return codigo;
+    }
 
-    public void setCodigo(String codigo){this.codigo = codigo;}
-
-    public String getNome(){return nome;}
-
-    public void setNome(String nome){this.nome = nome;}
-
-
+    public String getNome() {
+        return nome;
+    }
 }
 
 
