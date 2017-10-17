@@ -8,26 +8,29 @@ public class Aluno {
 
     private String dre;
     private String nome;
+    private int curso_id;
 
-
-    public Aluno(){
+    public Aluno() {
         dre = "";
         nome = "";
+        curso_id = 0;
     }
 
-    public Aluno(String dre, String nome){
+    public Aluno(String dre, String nome, int curso_id) {
         this.dre = dre;
-        this.nome = dre;
+        this.nome = nome;
+        this.curso_id = curso_id;
     }
 
-    public String getDre() {return dre;}
+    public String getDre() {
+        return dre;
+    }
 
-    public void setDre(String dre) {this.dre = dre;}
+    public String getNome() {
+        return nome;
+    }
 
-    public String getNome() {return nome;}
-
-    public void setNome(String nome) {this.nome = nome;}
-
-
-
+    public int getCursoId() {
+        return curso_id;
+    }
 }
