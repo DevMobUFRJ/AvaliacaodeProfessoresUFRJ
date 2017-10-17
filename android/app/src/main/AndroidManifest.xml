@@ -28,7 +28,7 @@
             </activity>
         <activity android:name=".FormActivity" />
         <activity
-            android:name=".Busca"
+            android:name=".SearchActivity"
             android:label="Pesquisar"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".MenuActivity"

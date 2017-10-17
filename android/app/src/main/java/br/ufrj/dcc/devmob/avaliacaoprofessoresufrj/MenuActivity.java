@@ -1,11 +1,8 @@
 package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
@@ -38,7 +35,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(a);
                 break;
             case R.id.btn_pesquisa:
-                Intent b = new Intent(MenuActivity.this, Busca.class);
+                Intent b = new Intent(MenuActivity.this, SearchActivity.class);
                 startActivity(b);
                 break;
             }

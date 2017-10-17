@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +27,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Busca extends AppCompatActivity implements View.OnClickListener {
+public class SearchActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ListView tela;
     Spinner dropdown;
@@ -71,7 +70,7 @@ public class Busca extends AppCompatActivity implements View.OnClickListener {
     public void onClick (View view) {
         switch (view.getId()){
             case R.id.btn_pesquisa:
-                hideSoftKeyboard(Busca.this, view);
+                hideSoftKeyboard(SearchActivity.this, view);
                 adaptador.clear();
                 findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
                 String texto = text.getText().toString();
@@ -83,7 +82,7 @@ public class Busca extends AppCompatActivity implements View.OnClickListener {
                                 final List<Disciplina> lista = response.body();
                                 itens = new ArrayList<>();
                                 if(lista.size() <= 0){
-                                    Toast.makeText(Busca.this, "Busca não encontrou nada", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SearchActivity.this, "SearchActivity não encontrou nada", Toast.LENGTH_SHORT).show();
                                 }else{
                                      for (int i = 0; i < lista.size(); i++){
                                         itens.add(lista.get(i).getcodigo() + " - " + lista.get(i).getNome());
@@ -96,7 +95,7 @@ public class Busca extends AppCompatActivity implements View.OnClickListener {
                             @Override
                             public void onFailure(Call<List<Disciplina>> call, Throwable t) {
                                 findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-                                Toast.makeText(Busca.this, "Error", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SearchActivity.this, "Error", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }catch (IOException e){}
@@ -108,7 +107,7 @@ public class Busca extends AppCompatActivity implements View.OnClickListener {
                             final List<Docente> lista = response.body();
                             itens = new ArrayList<>();
                             if(lista.size() <= 0){
-                                Toast.makeText(Busca.this, "Busca não encontrou nada", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SearchActivity.this, "SearchActivity não encontrou nada", Toast.LENGTH_SHORT).show();
                             }else{
                                 for (int i = 0; i < lista.size(); i++) {
                                     itens.add(lista.get(i).getNome());
@@ -121,7 +120,7 @@ public class Busca extends AppCompatActivity implements View.OnClickListener {
                         @Override
                         public void onFailure(Call<List<Docente>> call, Throwable t) {
                             findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-                            Toast.makeText(Busca.this, "Error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SearchActivity.this, "Error", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

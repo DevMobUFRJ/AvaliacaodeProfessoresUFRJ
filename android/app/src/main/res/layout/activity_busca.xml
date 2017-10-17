@@ -5,7 +5,7 @@
     android:id="@+id/activity_form1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.Busca"
+    tools:context="br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.SearchActivity"
     android:background="@color/CorFundo"
     android:focusableInTouchMode="true">
 
