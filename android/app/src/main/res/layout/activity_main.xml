@@ -15,6 +15,14 @@
             android:layout_width="100dp"
             android:layout_height="140dp" />
 
+        <EditText
+            android:id="@+id/login_dre"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:visibility="gone"
+            android:hint="DRE" />
+
         <Button
             android:id="@+id/autorizarSiga"
             android:layout_width="300dp"

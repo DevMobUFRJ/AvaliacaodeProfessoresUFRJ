@@ -65,4 +65,8 @@ public interface HttpService {
             @Field("dre") String dre,
             @Field("nome") String nome,
             @Field("curso_id") int curso_id );
+
+    @Headers({"Accept:application/json", "Cache-Control: max-age=640000"})
+    @GET("aluno/{dre}")
+    Call<Aluno> getAluno(@Path("dre")String dre);
 }

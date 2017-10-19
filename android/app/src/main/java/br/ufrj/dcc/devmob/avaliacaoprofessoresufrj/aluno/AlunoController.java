@@ -12,8 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AlunoController {
 
-    public static Call<Aluno> cadastrarAluno(Aluno aluno)
-            throws java.io.IOException{
+    public static Call<Aluno> cadastrarAluno(Aluno aluno) throws java.io.IOException {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(HttpService.baseURL)
@@ -23,5 +22,15 @@ public class AlunoController {
 
         return service.cadastrarAluno(aluno.getDre(), aluno.getNome(),
                 aluno.getCursoId());
+    }
+
+    public static Call<Aluno> getAluno(String dre) throws java.io.IOException {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(HttpService.baseURL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        HttpService service = retrofit.create(HttpService.class);
+
+        return service.getAluno(dre);
     }
 }

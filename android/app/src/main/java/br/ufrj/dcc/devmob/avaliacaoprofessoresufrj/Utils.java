@@ -34,5 +34,10 @@ public class Utils {
 
     public static final int tags_count = 5;
 
+    public static boolean isDreValido(String dre){
+        //TODO Validar decentemente o DRE
+        return dre.matches("[1][0-9]{8}");
+    }
+
 
 }
