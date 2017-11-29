@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -50,6 +51,24 @@ public class SignUpActivity extends AppCompatActivity {
 
 
         finish = (Button) findViewById(R.id.signup_finish);
+
+        nome.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if(keyEvent.getAction() == KeyEvent.ACTION_DOWN){
+                    switch (i){
+                        case KeyEvent.KEYCODE_ENTER:
+                            finish.callOnClick();
+                            return true;
+                            default:
+                                break;
+                    }
+                }
+                return false;
+            }
+        });
+
+
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

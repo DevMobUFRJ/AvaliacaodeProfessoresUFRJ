@@ -61,6 +61,8 @@ public class HomeActivity extends AppCompatActivity{
                     switch (position) {
                         default:
                             Intent a = new Intent(HomeActivity.this, FormActivity.class);
+                            String DRE = getIntent().getStringExtra("DRE");
+                            a.putExtra("DRE", DRE);
                             a.putExtra("Nome_Mat", valorclicado);
                             startActivity(a);
                             break;

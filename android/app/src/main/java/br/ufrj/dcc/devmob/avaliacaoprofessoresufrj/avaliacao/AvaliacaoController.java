@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AvaliacaoController {
 
-    public static Response<Avaliacao> salvarAvaliacao(Avaliacao avaliacao)
+    public static Call<Avaliacao> salvarAvaliacao(Avaliacao avaliacao)
             throws java.io.IOException{
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -26,8 +26,7 @@ public class AvaliacaoController {
         Call<Avaliacao> call = service.salvarAvaliacao(avaliacao.getDreAluno(), avaliacao.getMatProf(),
               avaliacao.getComentario(), avaliacao.getNota(), avaliacao.getTags());
 
-        return call.execute();
-
+        return service.salvarAvaliacao(avaliacao.getDreAluno(), avaliacao.getMatProf(), avaliacao.getComentario(), avaliacao.getNota(), avaliacao.getTags());
     }
 
     public static List<Avaliacao> listarAvaliacoesPorAluno(String dreAluno)

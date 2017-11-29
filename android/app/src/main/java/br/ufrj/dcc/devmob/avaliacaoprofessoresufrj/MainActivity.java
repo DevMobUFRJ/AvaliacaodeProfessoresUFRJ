@@ -3,6 +3,7 @@ package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +40,21 @@ public class MainActivity extends Activity implements View.OnClickListener {
         signup.setOnClickListener(this);
 
         dreField = (EditText) findViewById(R.id.login_dre);
+        dreField.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if(keyEvent.getAction() == KeyEvent.ACTION_DOWN){
+                    switch (i){
+                        case KeyEvent.KEYCODE_ENTER:
+                            autorizar.callOnClick();
+                            return true;
+                            default:
+                                break;
+                    }
+                }
+                return false;
+            }
+        });
     }
 
     @Override
@@ -79,7 +95,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void userLogin(){
-        String dre = dreField.getText().toString().trim();
+        final String dre = dreField.getText().toString().trim();
         if(Utils.isDreValido(dre)){
 
             try {
@@ -88,6 +104,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     public void onResponse(Call<Aluno> call, Response<Aluno> response) {
                         //TODO Salvar o usuário da resposta na aplicação pra sempre
                         Intent i = new Intent(MainActivity.this, MenuActivity.class);
+                        i.putExtra("DRE",dre);
                         startActivity(i);
                         finish();
                     }

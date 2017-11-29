@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -25,6 +26,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
         btn_avalia.setOnClickListener(this);
         btn_pesquisa.setOnClickListener(this);
+
     }
 
 
@@ -32,6 +34,8 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             switch (view.getId()){
             case R.id.btn_avaliacoes:
                 Intent a = new Intent(MenuActivity.this, HomeActivity.class);
+                String DRE = getIntent().getStringExtra("DRE");
+                a.putExtra("DRE", DRE);
                 startActivity(a);
                 break;
             case R.id.btn_pesquisa:

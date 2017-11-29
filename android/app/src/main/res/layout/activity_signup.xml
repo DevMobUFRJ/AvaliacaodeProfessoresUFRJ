@@ -11,20 +11,22 @@
         android:id="@+id/signup_dre"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:gravity="center_vertical"
         android:layout_marginTop="15dp"
-        android:textSize="18sp"
-        android:hint="DRE" />
+        android:gravity="center_vertical"
+        android:hint="DRE"
+        android:inputType="number"
+        android:textSize="18sp" />
 
 
     <EditText
         android:id="@+id/signup_nome"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:gravity="center_vertical"
         android:layout_marginTop="15dp"
-        android:textSize="18sp"
-        android:hint="Nome Completo" />
+        android:gravity="center_vertical"
+        android:hint="Nome Completo"
+        android:inputType="text"
+        android:textSize="18sp" />
 
     <Spinner
         android:id="@+id/signup_curso_id"

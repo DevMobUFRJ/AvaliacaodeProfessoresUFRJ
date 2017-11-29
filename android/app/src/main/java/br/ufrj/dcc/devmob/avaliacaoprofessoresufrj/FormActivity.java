@@ -11,12 +11,16 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.avaliacao.Avaliacao;
+import br.ufrj.dcc.devmob.avaliacaoprofessoresufrj.avaliacao.AvaliacaoController;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FormActivity extends Activity{
 
-    // Substituir depois pelas variaveis globais
-    String dreAluno = "115545454";
     EditText comentario;
     TextView txt_mat;
     Button btn_prox;
@@ -68,7 +72,8 @@ public class FormActivity extends Activity{
         //mAvaliacao.setMatProf(b.getString("MatProf"));
         //mAvaliacao.setCodigo(b.getString("CODDISC"));
 
-        String NomeMat = getIntent().getStringExtra("Nome_Mat");
+        final String NomeMat = getIntent().getStringExtra("Nome_Mat");
+        final String drealuno = getIntent().getStringExtra("DRE");
         txt_mat.setText(NomeMat);
         if (toast[0] != null) {toast[0].cancel();}
 
@@ -211,20 +216,26 @@ public class FormActivity extends Activity{
         btn_prox.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // Pega nota da avaliação
-                        //mAvaliacao.setNota(rtg_1.getRating());
 
-                        // Pega descriçãpo
-                        //String coment = comentario.getText().toString();
-                        //mAvaliacao.setComentario(coment);
-
-                        // Envia avaliação pro servidor
-                        //mAvaliacao.setTags(valor_tag);
-
-                        Toast.makeText(getApplicationContext(), "Sua resposta foi salva", Toast.LENGTH_SHORT).show();
-                        if (toast[0] != null) {toast[0].cancel();}
-                        finish();
-
+                        String coment = comentario.getText().toString();
+                        Avaliacao avalia = new Avaliacao(drealuno, NomeMat, coment, nota, valor_tag );
+                        try{
+                            AvaliacaoController.salvarAvaliacao(avalia).enqueue(new Callback<Avaliacao>() {
+                                @Override
+                                public void onResponse(Call<Avaliacao> call, Response<Avaliacao> response) {
+                                    Toast.makeText(getApplicationContext(), "Sua resposta foi salva", Toast.LENGTH_SHORT).show();
+                                    if (toast[0] != null) {toast[0].cancel();}
+                                    finish();
+                                }
+                                @Override
+                                public void onFailure(Call<Avaliacao> call, Throwable t) {
+                                    Toast.makeText(getApplicationContext(), "Erro na requisição", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                        catch (IOException e) {
+                            Toast.makeText(getApplicationContext(), "Erro ao salvar avaliação, tente novamente", Toast.LENGTH_LONG).show();
+                        }
                     }
         });
 
