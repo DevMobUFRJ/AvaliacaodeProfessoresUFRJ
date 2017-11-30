@@ -218,14 +218,16 @@ public class FormActivity extends Activity{
                     public void onClick(View view) {
 
                         String coment = comentario.getText().toString();
-                        Avaliacao avalia = new Avaliacao(drealuno, NomeMat, coment, nota, valor_tag );
+                        Avaliacao avalia = new Avaliacao(drealuno, "1", coment, true, nota );
                         try{
                             AvaliacaoController.salvarAvaliacao(avalia).enqueue(new Callback<Avaliacao>() {
                                 @Override
                                 public void onResponse(Call<Avaliacao> call, Response<Avaliacao> response) {
-                                    Toast.makeText(getApplicationContext(), "Sua resposta foi salva", Toast.LENGTH_SHORT).show();
-                                    if (toast[0] != null) {toast[0].cancel();}
-                                    finish();
+                                    if(response.isSuccessful()){
+                                        Toast.makeText(getApplicationContext(), "Sua resposta foi salva", Toast.LENGTH_SHORT).show();
+                                        if (toast[0] != null) {toast[0].cancel();}
+                                        finish();
+                                    } else Toast.makeText(getApplicationContext(), "Error no response", Toast.LENGTH_SHORT).show();
                                 }
                                 @Override
                                 public void onFailure(Call<Avaliacao> call, Throwable t) {

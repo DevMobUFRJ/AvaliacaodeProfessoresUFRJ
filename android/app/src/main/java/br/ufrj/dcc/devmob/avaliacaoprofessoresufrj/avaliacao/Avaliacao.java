@@ -17,9 +17,10 @@ public class Avaliacao{
     private String dreAluno;
     private String matProf;
     private String comentario;
+    private String disciplina_periodo_id;
     private float nota;
     private Date data;
-    private boolean visivel;
+    private boolean status;
     /**
      * Conferir Utils.tags_nomes
      */
@@ -35,7 +36,7 @@ public class Avaliacao{
         nota = -1;
         data = new Date();
         data.setTime(System.currentTimeMillis());
-        visivel = true;
+        status = true;
     }
 
     /**
@@ -51,18 +52,26 @@ public class Avaliacao{
         this.matProf = matProf;
         this.comentario = comentario;
         this.nota = nota;
-        this.visivel = true;
+        this.status = true;
         this.tags = tags;
     }
 
-    public Avaliacao(String id, String dreAluno, String matProf, String comentario, float nota, Date data, boolean visivel, int[] tags){
+    public Avaliacao(String dreAluno, String disciplina_periodo_id, String comentario, Boolean status, float nota){
+        this.dreAluno = dreAluno;
+        this.disciplina_periodo_id = disciplina_periodo_id;
+        this.comentario = comentario;
+        this.status = status;
+        this.nota = nota;
+    }
+
+    public Avaliacao(String id, String dreAluno, String matProf, String comentario, float nota, Date data, boolean status, int[] tags){
         this.id = id;
         this.dreAluno = dreAluno;
         this.matProf = matProf;
         this.comentario = comentario;
         this.nota = nota;
         this.data = data;
-        this.visivel = visivel;
+        this.status = status;
         this.tags = tags;
     }
 
@@ -108,7 +117,7 @@ public class Avaliacao{
     }
 
     public boolean isVisivel() {
-        return visivel;
+        return status;
     }
 
     public int[] getTags() {

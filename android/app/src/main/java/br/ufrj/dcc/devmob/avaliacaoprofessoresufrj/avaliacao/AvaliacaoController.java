@@ -23,10 +23,7 @@ public class AvaliacaoController {
                 .build();
         HttpService service = retrofit.create(HttpService.class);
 
-        Call<Avaliacao> call = service.salvarAvaliacao(avaliacao.getDreAluno(), avaliacao.getMatProf(),
-              avaliacao.getComentario(), avaliacao.getNota(), avaliacao.getTags());
-
-        return service.salvarAvaliacao(avaliacao.getDreAluno(), avaliacao.getMatProf(), avaliacao.getComentario(), avaliacao.getNota(), avaliacao.getTags());
+        return service.salvarAvaliacao(avaliacao.getDreAluno(), avaliacao.getId(), avaliacao.getComentario(), avaliacao.isVisivel(), avaliacao.getNota());
     }
 
     public static List<Avaliacao> listarAvaliacoesPorAluno(String dreAluno)

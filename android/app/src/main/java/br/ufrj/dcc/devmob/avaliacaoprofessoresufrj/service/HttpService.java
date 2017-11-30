@@ -38,11 +38,11 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("avaliacao")
     Call<Avaliacao> salvarAvaliacao(
-            @Field("dreAluno")String dreAluno,
-            @Field("matProf")String matProf,
+            @Field("aluno_dre")String aluno_dre,
+            @Field("disciplina_periodo_id")String disciplina_periodo_id,
             @Field("comentario")String comentario,
-            @Field("nota")float nota,
-            @Field("tags")int[] tags );
+            @Field("status")Boolean status,
+            @Field("nota")float nota );
 
 
     @Headers({"Accept:application/json", "Cache-Control: max-age=640000"})

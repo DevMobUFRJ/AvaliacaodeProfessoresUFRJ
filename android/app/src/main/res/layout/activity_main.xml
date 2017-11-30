@@ -17,6 +17,7 @@
 
         <EditText
             android:id="@+id/login_dre"
+            android:textColor="@color/colorAccent"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"

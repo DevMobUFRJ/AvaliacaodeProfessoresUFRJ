@@ -2,7 +2,9 @@ package br.ufrj.dcc.devmob.avaliacaoprofessoresufrj;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -37,6 +39,9 @@ public class HomeActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        loadingPanel = (ProgressBar) findViewById(R.id.progresso);
+        loadingPanel.setProgressTintList(ResourcesCompat.getColorStateList(getResources(), R.color.colorAccent, null));
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
